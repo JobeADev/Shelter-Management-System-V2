@@ -79,6 +79,6 @@
   border-bottom-right-radius: 5px;
 }
 
-.active {
+.current-hero {
   opacity: 50%;
 }

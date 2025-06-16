@@ -44,7 +44,9 @@ const RecentRescueCard = (props) => {
                 alt="missing"
                 data-index={index}
                 className={
-                  index === activeIndex ? "side-image active" : "side-image"
+                  index === activeIndex
+                    ? "side-image current-hero"
+                    : "side-image"
                 }
                 key={i}
               />
