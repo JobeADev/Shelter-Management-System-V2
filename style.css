@@ -1,0 +1,12 @@
+:root {
+  --primary: rgb(119, 18, 119);
+  --secondary: white;
+  --hover: rgb(183, 53, 183);
+  --border: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
