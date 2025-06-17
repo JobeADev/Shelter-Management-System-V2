@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import Dropdown from "./Dropdown";
-import { AdoptItems, VolunteerItems } from "./DropdownItems";
+import { AdoptItems, VolunteerItems, ResourcesItems } from "./DropdownItems";
 import "./NavBar.css";
 
 export default function NavBar() {
   const [adoptDD, setAdoptDD] = useState(false);
   const [volunteerDD, setVolunteerDD] = useState(false);
+  const [resourcesDD, setResourcesDD] = useState(false);
 
   return (
     <nav className="nav-bar">
@@ -36,6 +37,16 @@ export default function NavBar() {
             VOLUNTEER
           </Link>
           {volunteerDD ? <Dropdown props={VolunteerItems} /> : null}
+        </li>
+        <li
+          className="nav-option"
+          onMouseEnter={() => setResourcesDD(true)}
+          onMouseLeave={() => setResourcesDD(false)}
+        >
+          <Link to="/resources" className="nav-link">
+            RESOURCES
+          </Link>
+          {resourcesDD ? <Dropdown props={ResourcesItems} /> : null}
         </li>
         <li className="nav-option">
           <Link to="/contact" className="nav-link">

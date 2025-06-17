@@ -3,6 +3,7 @@
   --secondary: white;
   --hover: rgb(183, 53, 183);
   --border: black;
+  --font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {

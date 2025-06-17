@@ -25,7 +25,7 @@ function Index() {
   }
   // console.log(data);
   return (
-    <div>
+    <div className="index">
       <header className="cat-image"></header>
       <h1 className="rr-title">Recent Rescues</h1>
       <section className="recent-rescues">

@@ -27,3 +27,14 @@ export const VolunteerItems = [
     path: "/volunteer/foster",
   },
 ];
+
+export const ResourcesItems = [
+  {
+    title: "PET CARE",
+    path: "resources/care",
+  },
+  {
+    title: "SURRENDERING A PET",
+    path: "resources/surrender",
+  },
+];

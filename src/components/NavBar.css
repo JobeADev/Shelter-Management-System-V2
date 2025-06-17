@@ -37,7 +37,7 @@
 
 .nav-link,
 .donate-btn-link {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font);
   font-weight: bolder;
   transition: 0.5s ease-out;
 }
