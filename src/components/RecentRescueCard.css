@@ -82,3 +82,23 @@
 .current-hero {
   opacity: 50%;
 }
+
+@media screen and (max-width: 960px) {
+  .rescue-card-container {
+    height: 600px;
+  }
+
+  .rescue-card {
+    width: 89.5%;
+  }
+
+  .hero {
+    height: 84%;
+    border-right: solid 2px var(--border);
+  }
+
+  .side-image {
+    height: 27.8%;
+    border-top: solid 2px var(--border);
+  }
+}

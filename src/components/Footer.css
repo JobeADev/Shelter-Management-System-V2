@@ -70,3 +70,38 @@
 .fa-brands {
   font-size: 21px;
 }
+
+@media screen and (max-width: 960px) {
+  .footer {
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .footer-logo {
+    padding-top: 0px;
+    font-size: 1.3rem;
+  }
+
+  .footer-option {
+    list-style: none;
+    padding-right: 20px;
+  }
+
+  .footer-link {
+    font-size: 23px;
+  }
+
+  .social-links-title {
+    display: none;
+  }
+
+  .fa-brands {
+    font-size: 35px;
+  }
+
+  .social-links {
+    width: 210px;
+    justify-content: space-between;
+  }
+}

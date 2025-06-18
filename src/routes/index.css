@@ -39,5 +39,11 @@ body {
 }
 
 .index {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 960px) {
+  .cat-image {
+    height: 355px;
+  }
 }
