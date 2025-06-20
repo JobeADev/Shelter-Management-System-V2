@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import RescueSwiper from "../components/RescueSwiper";
+import { ClickedContext } from "../components/contexts";
 import "./index.css";
 import getRecentRescues from "../api/getRecentRescues";
 
@@ -10,6 +12,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [clicked] = useContext(ClickedContext);
   const { isLoading, data } = useQuery({
     queryKey: ["recent-rescues"],
     queryFn: () => getRecentRescues(),
@@ -25,8 +28,14 @@ function Index() {
   }
   // console.log(data);
   return (
-    <div className="index">
-      <header className="cat-image"></header>
+    <div className={clicked ? "index clicked" : "index"}>
+      <header className="cat-image">
+        {/* <p className="dog-image-text">
+          <Link to="adopt" className="dog-image-link">
+            CAN YOU MAKE A DIFFERENCE?
+          </Link>
+        </p> */}
+      </header>
       <h1 className="rr-title">Recent Rescues</h1>
       <section className="recent-rescues">
         <RescueSwiper props={data} className="rescue-swiper" />

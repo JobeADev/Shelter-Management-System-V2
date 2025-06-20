@@ -1,0 +1,39 @@
+.rescue-details-link {
+  margin: 0px 80px 50px 0px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 19.5px;
+  background-color: var(--primary);
+  color: var(--secondary);
+  width: 155px;
+  transition: 0.5s ease-in-out;
+  border-radius: 30px;
+}
+
+.rescue-details-link:hover {
+  background-color: var(--hover);
+  color: var(--primary);
+  transform: scale(1.01);
+}
+
+.rescue-details-link:last-child {
+  padding-right: 0px;
+}
+
+.rescue-details-image {
+  max-height: 190px;
+  width: 155px;
+  border-radius: 30px;
+}
+
+.rescue-details-name {
+  padding-top: 6px;
+}
+
+.rescue-details-info {
+  /* background-color: var(--primary); */
+  color: var(--secondary);
+  font-size: 16px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}

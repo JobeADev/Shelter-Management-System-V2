@@ -9,38 +9,135 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AdoptOtherRouteImport } from './routes/adoptOther'
+import { Route as AdoptDogsRouteImport } from './routes/adoptDogs'
+import { Route as AdoptCatsRouteImport } from './routes/adoptCats'
+import { Route as AdoptRouteImport } from './routes/adopt'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RescueDetailsPostIdRouteImport } from './routes/rescueDetails.$postId'
 
+const AdoptOtherRoute = AdoptOtherRouteImport.update({
+  id: '/adoptOther',
+  path: '/adoptOther',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdoptDogsRoute = AdoptDogsRouteImport.update({
+  id: '/adoptDogs',
+  path: '/adoptDogs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdoptCatsRoute = AdoptCatsRouteImport.update({
+  id: '/adoptCats',
+  path: '/adoptCats',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdoptRoute = AdoptRouteImport.update({
+  id: '/adopt',
+  path: '/adopt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RescueDetailsPostIdRoute = RescueDetailsPostIdRouteImport.update({
+  id: '/rescueDetails/$postId',
+  path: '/rescueDetails/$postId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/adopt': typeof AdoptRoute
+  '/adoptCats': typeof AdoptCatsRoute
+  '/adoptDogs': typeof AdoptDogsRoute
+  '/adoptOther': typeof AdoptOtherRoute
+  '/rescueDetails/$postId': typeof RescueDetailsPostIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/adopt': typeof AdoptRoute
+  '/adoptCats': typeof AdoptCatsRoute
+  '/adoptDogs': typeof AdoptDogsRoute
+  '/adoptOther': typeof AdoptOtherRoute
+  '/rescueDetails/$postId': typeof RescueDetailsPostIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/adopt': typeof AdoptRoute
+  '/adoptCats': typeof AdoptCatsRoute
+  '/adoptDogs': typeof AdoptDogsRoute
+  '/adoptOther': typeof AdoptOtherRoute
+  '/rescueDetails/$postId': typeof RescueDetailsPostIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/adopt'
+    | '/adoptCats'
+    | '/adoptDogs'
+    | '/adoptOther'
+    | '/rescueDetails/$postId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/adopt'
+    | '/adoptCats'
+    | '/adoptDogs'
+    | '/adoptOther'
+    | '/rescueDetails/$postId'
+  id:
+    | '__root__'
+    | '/'
+    | '/adopt'
+    | '/adoptCats'
+    | '/adoptDogs'
+    | '/adoptOther'
+    | '/rescueDetails/$postId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdoptRoute: typeof AdoptRoute
+  AdoptCatsRoute: typeof AdoptCatsRoute
+  AdoptDogsRoute: typeof AdoptDogsRoute
+  AdoptOtherRoute: typeof AdoptOtherRoute
+  RescueDetailsPostIdRoute: typeof RescueDetailsPostIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/adoptOther': {
+      id: '/adoptOther'
+      path: '/adoptOther'
+      fullPath: '/adoptOther'
+      preLoaderRoute: typeof AdoptOtherRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adoptDogs': {
+      id: '/adoptDogs'
+      path: '/adoptDogs'
+      fullPath: '/adoptDogs'
+      preLoaderRoute: typeof AdoptDogsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adoptCats': {
+      id: '/adoptCats'
+      path: '/adoptCats'
+      fullPath: '/adoptCats'
+      preLoaderRoute: typeof AdoptCatsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adopt': {
+      id: '/adopt'
+      path: '/adopt'
+      fullPath: '/adopt'
+      preLoaderRoute: typeof AdoptRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +145,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rescueDetails/$postId': {
+      id: '/rescueDetails/$postId'
+      path: '/rescueDetails/$postId'
+      fullPath: '/rescueDetails/$postId'
+      preLoaderRoute: typeof RescueDetailsPostIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdoptRoute: AdoptRoute,
+  AdoptCatsRoute: AdoptCatsRoute,
+  AdoptDogsRoute: AdoptDogsRoute,
+  AdoptOtherRoute: AdoptOtherRoute,
+  RescueDetailsPostIdRoute: RescueDetailsPostIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

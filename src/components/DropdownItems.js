@@ -1,40 +1,40 @@
 export const AdoptItems = [
   {
     title: "CATS",
-    path: "/adopt/cats",
+    path: "/adoptCats",
   },
   {
     title: "DOGS",
-    path: "/adopt/dogs",
+    path: "/adoptDogs",
   },
   {
     title: "OTHER ANIMALS",
-    path: "/adopt/other",
+    path: "/adoptOther",
   },
   {
     title: "ADOPTION INFO",
-    path: "/adopt/info",
+    path: "/adoptInfo",
   },
 ];
 
 export const VolunteerItems = [
   {
     title: "INTERNSHIPS",
-    path: "/volunteer/internships",
+    path: "/volunteerInternships",
   },
   {
     title: "FOSTER PARENTING",
-    path: "/volunteer/foster",
+    path: "/volunteerFoster",
   },
 ];
 
 export const ResourcesItems = [
   {
     title: "PET CARE",
-    path: "resources/care",
+    path: "resourcesCare",
   },
   {
     title: "SURRENDERING A PET",
-    path: "resources/surrender",
+    path: "resourcesSurrender",
   },
 ];

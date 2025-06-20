@@ -17,20 +17,51 @@ body {
 .cat-image {
   height: 700px;
   background-image: url(../imgs/banner.jpg);
-  /* background-position-y: -585px; */
   background-position-y: 71.8%;
   background-size: cover;
   background-repeat: no-repeat;
   /* opacity: 80%; */
 }
 
+.dog-image {
+  height: 700px;
+  background-image: url(../imgs/gowtham-agm-Hcgv-TBKnTE-unsplash.jpg);
+  /* background-image: url(../imgs/chirag-dulyan-pScqBIlWnxE-unsplash.jpg); */
+  /* Photo by <a href="https://unsplash.com/@gowthamagm?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Gowtham AGM</a> on <a href="https://unsplash.com/photos/a-group-of-three-puppies-sitting-next-to-each-other-Hcgv-TBKnTE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> */
+  /* Photo by <a href="https://unsplash.com/@chirag22?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Chirag Dulyan</a> on <a href="https://unsplash.com/photos/brown-and-black-short-coated-puppy-on-green-textile-pScqBIlWnxE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> */
+  background-position-y: 41.8%;
+  /* background-position-y: 64%; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  align-content: center;
+}
+
+.dog-image-text {
+  /* position: relative; */
+  margin-left: 220px;
+  margin-bottom: 180px;
+  color: var(--secondary);
+  /* font-weight: bold; */
+}
+
+.dog-image-link {
+  font-size: 35px;
+  text-decoration: none;
+  transition: 0.4s ease-out;
+}
+
+.dog-image-link:hover {
+  color: var(--hover);
+}
+
 .rr-title {
   padding-top: 30px;
-  padding-bottom: 35px;
+  padding-bottom: 30px;
   text-align: center;
   font-family: var(--font);
   font-weight: bold;
-  font-size: 50px;
+  font-size: 53px;
   color: var(--primary);
   background-color: var(--secondary);
 }
@@ -41,9 +72,101 @@ body {
 .index {
   margin-bottom: 40px;
 }
+@media screen and (max-width: 1550px) {
+  .cat-image {
+    height: 555px;
+  }
+
+  .dog-image {
+    height: 555px;
+  }
+
+  .dog-image-link {
+    font-size: 30px;
+  }
+
+  .rr-title {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .loader {
+    font-size: 50px;
+  }
+
+  .cat-image {
+    height: 450px;
+  }
+
+  .dog-image {
+    height: 450px;
+  }
+
+  .dog-image-text {
+    margin-left: 160px;
+    margin-bottom: 135px;
+  }
+
+  .dog-image-link {
+    font-size: 24px;
+  }
+
+  .index.clicked {
+    display: none;
+  }
+
+  .rr-title {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 44px;
+  }
+}
 
 @media screen and (max-width: 960px) {
   .cat-image {
     height: 355px;
+  }
+
+  .dog-image {
+    height: 355px;
+  }
+
+  .dog-image-text {
+    margin-left: 125px;
+    margin-bottom: 110px;
+  }
+
+  .dog-image-link {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .loader {
+    font-size: 60px;
+  }
+
+  .cat-image {
+    height: 300px;
+  }
+
+  .dog-image {
+    height: 300px;
+  }
+
+  .dog-image-text {
+    margin-left: 110px;
+    margin-bottom: 100px;
+  }
+
+  .dog-image-link {
+    font-size: 17px;
+  }
+
+  .rr-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 39px;
   }
 }

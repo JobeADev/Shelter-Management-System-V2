@@ -1,21 +1,27 @@
+import { useState } from "react";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
+import NavBar from "../components/NavBar/NavBar";
+import Footer from "../components/Footer/Footer";
+import { ClickedContext, RescueIdContext } from "../components/contexts";
 
 export const Route = createRootRoute({
   component: RootComponent,
 });
 
 function RootComponent() {
+  const clickedHook = useState(false);
+  const rescueIdHook = useState(null);
   return (
     <>
-      <div>
+      <ClickedContext value={clickedHook}>
         <NavBar />
-        <Outlet />
+        <RescueIdContext value={rescueIdHook}>
+          <Outlet />
+        </RescueIdContext>
         <Footer />
-      </div>
+      </ClickedContext>
       <TanStackRouterDevtools />
       <ReactQueryDevtools />
     </>
