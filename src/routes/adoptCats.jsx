@@ -23,7 +23,7 @@ function Cats() {
     );
   }
 
-  console.log(data);
+  // console.log(data);
   return (
     <div className="adopt-container">
       <div className="adopt-title-container">

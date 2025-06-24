@@ -12,6 +12,9 @@
   justify-content: center;
   background-color: var(--primary);
   transition: 0.5s ease;
+  -webkit-user-select: none; /* For Safari */
+  -ms-user-select: none; /* For Internet Explorer/Edge */
+  user-select: none;
 }
 
 .rescue-card-container:hover {
@@ -37,6 +40,8 @@
   font-family: var(--font);
   font-size: 28px;
   text-shadow: 2px 2px 5px black;
+  text-decoration: none;
+  padding: 12px 0px;
 }
 
 .rescue-detail {
@@ -118,5 +123,10 @@
 
   .side-images {
     width: 22%;
+  }
+
+  .rescue-name {
+    font-size: 27px;
+    padding: 10px 0px;
   }
 }

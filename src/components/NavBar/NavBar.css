@@ -26,6 +26,10 @@
   font-size: 1.2rem;
 }
 
+.nav-bar-container {
+  box-shadow: var(--shadow);
+}
+
 .menu {
   justify-content: center;
   /* width: 50%; */

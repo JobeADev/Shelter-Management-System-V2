@@ -22,5 +22,25 @@ function OtherSpecies() {
       </div>
     );
   }
-  return <div>Hello "/adopt/other"!</div>;
+  return (
+    <div className="adopt-container">
+      <div className="adopt-title-container">
+        <h1 className="adopt-title">OTHER SPECIES</h1>
+      </div>
+      <div className="rescue-list">
+        {data.map((rescue) => (
+          <AnimalListing
+            key={rescue.petId}
+            petId={rescue.petId}
+            name={rescue.name}
+            gender={rescue.gender}
+            species={rescue.species}
+            images={rescue.images}
+            breed={rescue.breed}
+            birthday={rescue.birthday}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }

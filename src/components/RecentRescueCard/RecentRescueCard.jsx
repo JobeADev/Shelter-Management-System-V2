@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { ageInMonthsConverter, ageInYearsConverter } from "../ageConverters";
 import "./RecentRescueCard.css";
 
@@ -11,7 +12,9 @@ const RecentRescueCard = (rescue) => {
     <div className="rescue-card-container">
       <div className="rescue-card">
         <section className="rescue-info">
-          <h1 className="rescue-name">{rescue.name}</h1>
+          <Link to={`/rescueDetails/${rescue.petId}`} className="rescue-name">
+            {rescue.name}
+          </Link>
           <div className="rescue-info-container">
             <div>
               <p className="rescue-detail">Gender: {rescue.gender}</p>

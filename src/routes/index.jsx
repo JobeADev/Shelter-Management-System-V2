@@ -6,7 +6,7 @@ import RescueSwiper from "../components/RescueSwiper";
 import { ClickedContext } from "../components/contexts";
 import "./index.css";
 import getRecentRescues from "../api/getRecentRescues";
-
+import NavBar from "../components/NavBar/NavBar";
 export const Route = createFileRoute("/")({
   component: Index,
 });
@@ -30,16 +30,22 @@ function Index() {
   return (
     <div className={clicked ? "index clicked" : "index"}>
       <header className="cat-image">
+        <div className="tooltip">Why are they staring at us?</div>
         {/* <p className="dog-image-text">
           <Link to="adopt" className="dog-image-link">
             CAN YOU MAKE A DIFFERENCE?
           </Link>
         </p> */}
       </header>
-      <h1 className="rr-title">Recent Rescues</h1>
+      <div className="rr-title-container">
+        <div className="pattern-spikes-first"></div>
+        <h1 className="rr-title">Recent Rescues</h1>
+        <div className="pattern-spikes-last"></div>
+      </div>
       <section className="recent-rescues">
         <RescueSwiper props={data} className="rescue-swiper" />
       </section>
+      <div className="before-footer"></div>
     </div>
   );
 }

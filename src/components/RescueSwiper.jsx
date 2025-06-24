@@ -8,6 +8,8 @@ const RescueSwiper = (data) => {
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}
+      loop={true}
+      // centeredSlides={true}
       spaceBetween={0}
       slidesPerView={1}
       autoplay={{ delay: 5000, disableOnInteraction: true }}
@@ -19,6 +21,7 @@ const RescueSwiper = (data) => {
       {data.props.map((rescue) => (
         <SwiperSlide key={rescue.petId}>
           <RecentRescueCard
+            petId={rescue.petId}
             name={rescue.name}
             gender={rescue.gender}
             species={rescue.species}

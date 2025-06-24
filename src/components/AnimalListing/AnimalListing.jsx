@@ -4,10 +4,10 @@ import "./AnimalListing.css";
 
 const AnimalListing = (rescue) => {
   return (
-    <>
+    <nav className="rescue-details-container">
       <Link
         to={`/rescueDetails/${rescue.petId}`}
-        className="rescue-details-link"
+        className="rescue-details-image-link"
       >
         <img
           src={
@@ -18,17 +18,24 @@ const AnimalListing = (rescue) => {
           alt={rescue.name}
           className="rescue-details-image"
         />
-        <p className="rescue-details-name">{rescue.name}</p>
+      </Link>
+      <section className="rescue-details-info-container">
+        <Link
+          to={`/rescueDetails/${rescue.petId}`}
+          className="rescue-details-name-link"
+        >
+          {rescue.name}
+        </Link>
         <div className="rescue-details-info">
           <p>{rescue.breed}</p>
           <p>
-            Age: {ageInYearsConverter(rescue.birthday)}Yrs.{" "}
+            {ageInYearsConverter(rescue.birthday)}Yrs.{" "}
             {ageInMonthsConverter(rescue.birthday)}Mo.
           </p>
         </div>
-      </Link>
+      </section>
       {/* <section className="rescue-details-info"></section> */}
-    </>
+    </nav>
   );
 };
 
