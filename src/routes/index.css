@@ -47,6 +47,8 @@ body {
 
 .pattern-spikes-last {
   border-top: solid 1px var(--primary);
+  width: 100%;
+  z-index: 1;
 }
 
 .pattern-spikes-first::after {
@@ -114,6 +116,12 @@ body {
   color: var(--primary);
   background-color: var(--secondary);
 }
+
+/* .pattern-spikes-last-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+} */
 
 .rescue-swiper {
 }

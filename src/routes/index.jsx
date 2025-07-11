@@ -1,12 +1,11 @@
 import { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
-import { Link } from "@tanstack/react-router";
+// import { Link } from "@tanstack/react-router";
 import RescueSwiper from "../components/RescueSwiper";
 import { ClickedContext } from "../components/contexts";
 import "./index.css";
 import getRecentRescues from "../api/getRecentRescues";
-import NavBar from "../components/NavBar/NavBar";
 export const Route = createFileRoute("/")({
   component: Index,
 });
@@ -40,7 +39,9 @@ function Index() {
       <div className="rr-title-container">
         <div className="pattern-spikes-first"></div>
         <h1 className="rr-title">Recent Rescues</h1>
-        <div className="pattern-spikes-last"></div>
+        <div className="pattern-spikes-last-container">
+          <div className="pattern-spikes-last"></div>
+        </div>
       </div>
       <section className="recent-rescues">
         <RescueSwiper props={data} className="rescue-swiper" />

@@ -5,6 +5,20 @@
   text-align: start;
   position: absolute;
   background-color: var(--hover);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.dropdown-list.adopt {
+  width: 171px;
+}
+
+.dropdown-list.volunteer {
+  width: 192px;
+}
+
+.dropdown-list.resources {
+  width: 208px;
 }
 
 .dropdown-list.clicked {
@@ -26,16 +40,21 @@
 
 .dropdown-link {
   display: block;
-  padding: 10px 50px 10px 12px;
+  padding: 10px 0px 10px 12px;
   font-weight: normal;
   /* font-weight: bold; */
   font-size: 18px;
   color: var(--secondary);
   text-decoration: none;
   width: 100%;
-  transition: 0.5s ease-out;
+  transition: 0.4s ease-out;
 }
 
 .dropdown-link:hover {
   color: var(--primary);
+  border-left: solid 5px var(--primary);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  /* border-right-style:  */
+  /* border-right: solid 5px var(--primary); */
 }

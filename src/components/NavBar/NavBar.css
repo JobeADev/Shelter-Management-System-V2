@@ -42,7 +42,12 @@
   display: none;
   font-size: 42px;
   cursor: pointer;
+  transition: 0.5s ease-out;
   /* align-content: center; */
+}
+
+.menu-icon:hover {
+  color: var(--hover);
 }
 
 .fa-xmark,
@@ -133,9 +138,9 @@
     padding-bottom: 5px;
   }
 
-  .menu-icon.clicked {
+  /* .menu-icon.clicked {
     font-size: 48px;
-  }
+  } */
 
   .menu.clicked {
     background-color: var(--primary);

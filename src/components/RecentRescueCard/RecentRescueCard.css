@@ -8,13 +8,15 @@
 
 .rescue-card-container {
   width: 100%;
-  height: 1050px;
+  height: 1000px;
   justify-content: center;
   background-color: var(--primary);
   transition: 0.5s ease;
   -webkit-user-select: none; /* For Safari */
   -ms-user-select: none; /* For Internet Explorer/Edge */
   user-select: none;
+  /* box-shadow: var(--shadow);
+  margin-bottom: 7px; */
 }
 
 .rescue-card-container:hover {
@@ -22,7 +24,7 @@
 }
 
 .rescue-card {
-  width: 94.5%;
+  width: 85%;
   height: 100%;
 }
 
@@ -54,8 +56,8 @@
 }
 
 .hero {
-  height: 90%;
-  width: 80%;
+  height: 89%;
+  width: 78%;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-right: solid 3px var(--border);
@@ -63,12 +65,17 @@
 
 .side-images {
   flex-direction: column;
-  width: 20%;
+  width: 22%;
 }
 
 .side-image {
   width: 100%;
-  height: 30%;
+  height: 29.68%;
+  transition: 0.1s ease-in;
+}
+
+.side-image:hover {
+  opacity: 80%;
 }
 
 .side-image:first-child {
@@ -80,17 +87,21 @@
   border-bottom-right-radius: 5px;
 }
 
-.current-hero {
+.side-image.current-hero {
+  opacity: 50%;
+}
+
+.side-image.current-hero:hover {
   opacity: 50%;
 }
 
 @media screen and (max-width: 1280px) {
   .rescue-card-container {
-    height: 660px;
+    height: 800px;
   }
 
   .rescue-card {
-    width: 90.5%;
+    width: 85%;
   }
 
   .hero {
@@ -109,16 +120,16 @@
   }
 
   .rescue-card {
-    width: 87.5%;
+    width: 84%;
   }
 
   .hero {
-    height: 81.5%;
+    height: 81%;
     width: 78%;
   }
 
   .side-image {
-    height: 27.1%;
+    height: 27%;
   }
 
   .side-images {

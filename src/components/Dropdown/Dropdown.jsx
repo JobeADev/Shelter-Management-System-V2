@@ -10,15 +10,15 @@ export default function Dropdown(props) {
     <ul
       className={
         click
-          ? "dropdown-list w3-animate-opacity clicked"
-          : "dropdown-list w3-animate-opacity"
+          ? `dropdown-list w3-animate-opacity ${props.props[0].group} clicked`
+          : `dropdown-list w3-animate-opacity ${props.props[0].group}`
       }
       onClick={handleClick}
     >
       {props.props.map((i, index) => (
         <li key={index} className="dropdown-item">
           <Link
-            className="dropdown-link"
+            className={`dropdown-link ${i.class}`}
             to={i.path}
             onClick={() => setClick(false)}
           >

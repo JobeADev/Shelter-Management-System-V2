@@ -1,6 +1,14 @@
+:root {
+  --width-Desktop-M: 52px;
+  --width-Desktop-L: 60px;
+  --width-Mobile-M: 45px;
+  --width-Mobile-L: 50px;
+}
+
 .rescue-list,
 .adopt-container,
-.adopt-title-container {
+.adopt-title-container,
+.species-links {
   display: flex;
 }
 
@@ -22,9 +30,12 @@
   width: 100%;
   padding-inline: 180px;
 }
+.adopt-container.main {
+  height: 90vh;
+}
 
 .adopt-title {
-  margin: 35px 0px 65px 0px;
+  margin: 35px 0px 75px 0px;
   width: 100%;
   font-family: var(--font);
   color: var(--primary);
@@ -44,6 +55,61 @@
   align-items: center;
 }
 
+.species-links {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.species-link {
+  padding: 95px;
+  text-decoration: none;
+  font-size: 21px;
+  transition: 0.5s ease-out;
+  /* background-color: var(--primary); */
+  color: var(--secondary);
+  border: solid 3px var(--primary);
+  border-radius: 20%;
+}
+.species-link:hover {
+  opacity: 0.8;
+  border: solid 3px var(--hover);
+}
+
+.species-link.cats {
+  background-image: url(../imgs/feyza-yildirim-4mlHLfKEzGg-unsplash.jpg);
+  background-size: cover;
+}
+.species-link.dogs {
+  background-image: url(../imgs/joshua-hanson-b_iWBn_4xzs-unsplash.jpg);
+  background-position-y: 92%;
+  background-size: cover;
+}
+.species-link.other {
+  padding-left: var(--width-Desktop-M);
+  padding-right: var(--width-Desktop-M);
+  background-image: url(../imgs/steve-tsang-FnpFMheGjH0-unsplash.jpg);
+  background-position-x: 80%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.species-link.info {
+  padding-left: var(--width-Desktop-L);
+  padding-right: var(--width-Desktop-L);
+  background-image: url(../imgs/scarbor-siu-j9QWFny4eWw-unsplash.jpg);
+  background-position-x: 23%;
+  background-size: cover;
+}
+
+.species-link-container {
+  margin-top: 80px;
+  margin-right: 120px;
+  height: 70%;
+}
+
+.species-link-container:last-child {
+  margin-right: 0px;
+}
+
 @media screen and (max-width: 1250px) {
   .adopt-container {
     padding-inline: 90px;
@@ -59,7 +125,57 @@
     padding-inline: 70px;
   }
 
+  .species-link {
+    padding: 85px;
+    font-size: 19px;
+  }
+
+  .species-link-container {
+    margin-top: 90px;
+    margin-right: 50px;
+    height: 70%;
+  }
+
+  .species-link-container:first-child {
+    margin-left: 50px;
+  }
+
   .rescue-list {
     grid-template-columns: repeat(3, auto);
+  }
+
+  .species-link.other {
+    padding-left: var(--width-Mobile-M);
+    padding-right: var(--width-Mobile-M);
+  }
+  .species-link.info {
+    padding-left: var(--width-Mobile-L);
+    padding-right: var(--width-Mobile-L);
+  }
+}
+@media screen and (max-width: 740px) {
+  .species-link {
+    padding: 75px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 690px) {
+  .adopt-container.main {
+    height: 100vh;
+  }
+
+  .species-links {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+  }
+
+  .species-link-container {
+    margin-top: 180px;
+    margin-right: 0px;
+  }
+
+  .species-link-container:first-child {
+    margin-top: 25px;
+    margin-left: 0px;
   }
 }
