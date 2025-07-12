@@ -13,19 +13,21 @@ const AnimalListing = (rescue) => {
           src={
             rescue.images
               ? rescue.images[0]
-              : "http://pets-images.dev-apis.com/pets/none.jpg"
+              : "http://localhost:9000/pet_image/SMS-none.png"
           }
           alt={rescue.name}
           className="rescue-details-image"
         />
       </Link>
       <section className="rescue-details-info-container">
-        <Link
-          to={`/rescueDetails/${rescue.petId}`}
-          className="rescue-details-name-link"
-        >
-          {rescue.name}
-        </Link>
+        <div className="rescue-details-name-link-container">
+          <Link
+            to={`/rescueDetails/${rescue.petId}`}
+            className="rescue-details-name-link"
+          >
+            {rescue.name}
+          </Link>
+        </div>
         <div className="rescue-details-info">
           <p>{rescue.breed}</p>
           <p>

@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import Dropdown from "../Dropdown/Dropdown";
 import { ClickedContext } from "../contexts";
@@ -10,6 +10,42 @@ export default function NavBar() {
   const [adoptDD, setAdoptDD] = useState(false);
   const [volunteerDD, setVolunteerDD] = useState(false);
   const [resourcesDD, setResourcesDD] = useState(false);
+  // const [classContainer, setClassContainer] = useState("");
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+      // Scrolling down and past a certain threshold
+      setShowNavbar(false);
+    } else {
+      // Scrolling up or near the top
+      setShowNavbar(true);
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+  //   const handleScroll = () => {
+  //   if (window.scrollY > lastScrollY && window.scrollY > 100) {
+  //     // Scrolling down and past a certain threshold
+  //     setShowNavbar(false);
+  //     setClassContainer("hide");
+  //   } else if (window.scrollY > 100) {
+  //     // Scrolling up or near the top
+  //     setShowNavbar(true);
+  //     setClassContainer("show");
+  //   } else {
+  //     setClassContainer("");
+  //   }
+  //   setLastScrollY(window.scrollY);
+  // };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]); // Re-run effect if lastScrollY changes
 
   const handleClick = () => {
     setClicked(!clicked);
@@ -45,7 +81,7 @@ export default function NavBar() {
   }
 
   return (
-    <div className="nav-bar-container">
+    <div className={`nav-bar-container ${showNavbar ? "show" : "hide"}`}>
       <nav className="nav-bar">
         <Link to="/" className="nav-logo">
           <i className="fa-solid fa-paw fa-3x"></i>

@@ -31,13 +31,22 @@ body {
   z-index: -1;
 }
 
+/* @keyframes wiggle {
+  0% {
+    
+  }
+  50% {
+    
+  }
+} */
+
 .pattern-spikes-first,
 .pattern-spikes-last {
   position: relative;
   height: 18px;
   background-color: var(--secondary);
   isolation: isolate;
-  z-index: -1;
+  z-index: -2;
   box-shadow: 1px 1px 6px 0px var(--border);
 }
 
@@ -123,8 +132,8 @@ body {
   justify-content: center;
 } */
 
-.rescue-swiper {
-}
+/* .rescue-swiper {
+} */
 
 .recent-rescues {
   /* margin-bottom: 40px; */
@@ -148,28 +157,29 @@ body {
   position: relative;
   height: 12vh;
   isolation: isolate;
-  z-index: -1;
-  background: linear-gradient(1.4deg, var(--hover) 30%, var(--secondary) 31%);
+  z-index: -2;
+  /* background: linear-gradient(1.4deg, var(--hover) 30%, var(--secondary) 31%); */
+  background: linear-gradient(3.35deg, var(--hover) 50%, var(--secondary) 51%);
 }
 
-.before-footer::after {
-  /* content: "";
+/* .before-footer::after { */
+/* content: "";
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 130px;
   background: var(--hover);
   transform: skewY(10deg); */
-  /* z-index: -1; */
-  /* transform-origin: bottom; */
-  /* --mask:
+/* z-index: -1; */
+/* transform-origin: bottom; */
+/* --mask:
     radial-gradient(33.54px at 50% 45px, #000 99%, #0000 101%) calc(50% - 30px)
       0/60px 100%,
     radial-gradient(33.54px at 50% -30px, #0000 99%, #000 101%) 50% 15px/60px
       100% repeat-x;
   -webkit-mask: var(--mask);
   mask: var(--mask); */
-}
+/* } */
 
 .tooltip {
   margin-left: 50px;
@@ -278,7 +288,8 @@ body {
   }
 
   .before-footer {
-    background: linear-gradient(2.3deg, var(--hover) 30%, var(--secondary) 31%);
+    /* background: linear-gradient(2.3deg, var(--hover) 30%, var(--secondary) 31%); */
+    background: linear-gradient(5.4deg, var(--hover) 50%, var(--secondary) 51%);
   }
 }
 
@@ -311,7 +322,8 @@ body {
   }
 
   .before-footer {
-    background: linear-gradient(3deg, var(--hover) 30%, var(--secondary) 31%);
+    /* background: linear-gradient(3deg, var(--hover) 30%, var(--secondary) 31%); */
+    background: linear-gradient(6.8deg, var(--hover) 50%, var(--secondary) 51%);
   }
 }
 
@@ -350,5 +362,10 @@ body {
   }
   .tooltip {
     padding: 1em;
+  }
+
+  .before-footer {
+    /* background: linear-gradient(3deg, var(--hover) 30%, var(--secondary) 31%); */
+    background: linear-gradient(8.2deg, var(--hover) 50%, var(--secondary) 51%);
   }
 }
