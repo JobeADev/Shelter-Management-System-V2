@@ -40,7 +40,7 @@ const RecentRescueCard = (rescue) => {
             src={
               rescue.images
                 ? rescue.images[activeIndex]
-                : "https://picsum.photos/200"
+                : "http://localhost:9000/pet_image/SMS-none.png"
             }
             alt={rescue.name}
           />

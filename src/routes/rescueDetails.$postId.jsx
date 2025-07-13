@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import getRescue from "../api/getRescue";
+import RescuePage from "../components/RescuePage/RescuePage";
 
 export const Route = createFileRoute("/rescueDetails/$postId")({
   component: RescueDetails,
@@ -24,5 +25,21 @@ function RescueDetails() {
       </div>
     );
   }
-  return <div>{data.name}</div>;
+  return (
+    <div className="rescue-details-page-container">
+      <RescuePage
+        key={data.petId}
+        petId={data.petId}
+        name={data.name}
+        gender={data.gender}
+        weight={data.weight}
+        species={data.species}
+        breed={data.breed}
+        color={data.color}
+        birthday={data.birthday}
+        description={data.description}
+        images={data.images}
+      />
+    </div>
+  );
 }

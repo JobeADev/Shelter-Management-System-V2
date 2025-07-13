@@ -15,7 +15,9 @@ export default function NavBar() {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleScroll = () => {
-    if (window.scrollY > lastScrollY) {
+    if (clicked) {
+      setShowNavbar(true);
+    } else if (window.scrollY > lastScrollY) {
       // Scrolling down and past a certain threshold
       setShowNavbar(false);
     } else {
@@ -47,9 +49,9 @@ export default function NavBar() {
     };
   }, [lastScrollY]); // Re-run effect if lastScrollY changes
 
-  const handleClick = () => {
-    setClicked(!clicked);
-  };
+  // const handleClick = () => {
+  //   setClicked(!clicked);
+  // };
   const handleLinkClick = () => {
     if (window.innerWidth <= 1200) {
       setClicked(!clicked);
@@ -83,12 +85,17 @@ export default function NavBar() {
   return (
     <div className={`nav-bar-container ${showNavbar ? "show" : "hide"}`}>
       <nav className="nav-bar">
-        <Link to="/" className="nav-logo">
-          <i className="fa-solid fa-paw fa-3x"></i>
-        </Link>
+        <div className="nav-logo">
+          <Link to="/">
+            <i className="fa-solid fa-paw fa-3x" />
+          </Link>
+          {/* <Link to="/">
+            <div className="nav-home-paw-logo" />
+          </Link> */}
+        </div>
         <div
           className={clicked ? "menu-icon clicked" : "menu-icon"}
-          onClick={handleClick}
+          onClick={() => setClicked(!clicked)}
         >
           <i className={clicked ? "fas fa-xmark" : "fas fa-bars"} />
         </div>

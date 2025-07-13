@@ -10,9 +10,14 @@ export default function Footer() {
       className={clicked[0] ? "footer-container clicked" : "footer-container"}
     >
       <nav className="footer">
-        <Link to="/" className="footer-logo">
-          <i className="fa-solid fa-paw fa-3x"></i>
-        </Link>
+        <div className="footer-logo">
+          <Link to="/" className="paw">
+            <i className="fa-solid fa-paw fa-3x" />
+          </Link>
+          {/* <Link to="/">
+            <div className="footer-home-paw-logo" />
+          </Link> */}
+        </div>
         <ul className="footer-links">
           <li className="footer-option">
             <Link to="/about" className="footer-link">

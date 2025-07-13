@@ -25,7 +25,7 @@ function Dogs() {
   return (
     <div className="adopt-container">
       <div className="adopt-title-container">
-        <h1 className="adopt-title">DOGS</h1>
+        <h1 className="adopt-title dogs">DOGS</h1>
       </div>
       <div className="rescue-list">
         {data.map((rescue) => (

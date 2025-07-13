@@ -11,15 +11,15 @@ function Adopt() {
   return (
     <div className="adopt-container main">
       <div className="adopt-title-container">
-        <h1 className="adopt-title">ADOPT</h1>
+        <h1 className="adopt-title adopt-main">ADOPT</h1>
       </div>
       <nav className="species-links">
-        {AdoptItems.map((rescue, index) => (
-          <div className="species-link-container" key={index}>
-            <Link to={rescue.path} className={`species-link ${rescue.class}`}>
-              {rescue.title}
-            </Link>
-          </div>
+        {AdoptItems.map((category, index) => (
+          <Link to={category.path} className="species-link" key={index}>
+            <div className={`category-image ${category.class}`}>
+              <p className="category-image-name">{category.title}</p>
+            </div>
+          </Link>
         ))}
       </nav>
     </div>

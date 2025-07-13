@@ -1,14 +1,8 @@
-:root {
-  --width-Desktop-M: 52px;
-  --width-Desktop-L: 60px;
-  --width-Mobile-M: 45px;
-  --width-Mobile-L: 50px;
-}
-
 .rescue-list,
 .adopt-container,
 .adopt-title-container,
-.species-links {
+.species-links,
+.loader-container {
   display: flex;
 }
 
@@ -16,7 +10,6 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
-  display: flex;
   padding: 15px;
 }
 
@@ -29,18 +22,53 @@
   text-align: center;
   width: 100%;
   padding-inline: 180px;
-}
-.adopt-container.main {
-  height: 90vh;
+  background-color: rgb(141, 102, 141);
 }
 
 .adopt-title {
-  margin: 35px 0px 75px 0px;
+  padding-top: 100px;
+  margin-bottom: 0px;
+  margin-top: 0px;
   width: 100%;
   font-family: var(--font);
   color: var(--primary);
   font-size: 53px;
+  /* border-left: solid 3px var(--primary);
+  border-right: solid 3px var(--primary); */
   border-bottom: solid 3px var(--primary);
+  box-shadow: var(--one-side-shadow);
+  text-shadow: var(--text-shadow);
+  z-index: 1;
+}
+
+.adopt-title.adopt-main {
+  background-image: url(../imgs/elena-mozhvilo-BY2lWVC1uQ4-unsplash.jpg);
+  background-size: cover;
+  background-position-y: 40%;
+}
+
+.adopt-title.cats {
+  background-image: url(../imgs/feyza-yildirim-4mlHLfKEzGg-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.adopt-title.dogs {
+  background-image: url(../imgs/joshua-hanson-b_iWBn_4xzs-unsplash.jpg);
+  background-size: cover;
+  background-position-y: 49%;
+}
+
+.adopt-title.other {
+  background-image: url(../imgs/steve-tsang-FnpFMheGjH0-unsplash.jpg);
+  background-size: cover;
+  background-position-y: 24%;
+}
+
+.adopt-title.info {
+  background-image: url(../imgs/scarbor-siu-j9QWFny4eWw-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .adopt-title-container {
@@ -53,61 +81,93 @@
   grid-template-columns: repeat(5, auto);
   height: 100%;
   align-items: center;
+  /* border-left: dotted 3px var(--primary);
+  border-right: dotted 3px var(--primary); */
+  padding-top: 105px;
+}
+
+.adopt-title-container,
+.rescue-list {
+  background-color: var(--secondary);
 }
 
 .species-links {
-  flex-wrap: wrap;
   justify-content: center;
+  background-color: var(--secondary);
+  padding-top: 105px;
+  padding-bottom: 350px;
+  justify-content: space-evenly;
 }
 
 .species-link {
-  padding: 95px;
+  border-radius: 20%;
   text-decoration: none;
+  box-shadow: var(--shadow);
+  /* margin-right: 120px; */
+}
+
+.species-link:last-child {
+  margin-right: 0px;
+}
+
+.category-image {
+  height: 220px;
+  width: 220px;
   font-size: 21px;
   transition: 0.5s ease-out;
-  /* background-color: var(--primary); */
   color: var(--secondary);
   border: solid 3px var(--primary);
   border-radius: 20%;
+  align-content: center;
 }
-.species-link:hover {
+
+.category-image:hover {
   opacity: 0.8;
   border: solid 3px var(--hover);
 }
 
-.species-link.cats {
+.category-image.cats {
   background-image: url(../imgs/feyza-yildirim-4mlHLfKEzGg-unsplash.jpg);
   background-size: cover;
 }
-.species-link.dogs {
+.category-image.dogs {
   background-image: url(../imgs/joshua-hanson-b_iWBn_4xzs-unsplash.jpg);
   background-position-y: 92%;
   background-size: cover;
 }
-.species-link.other {
-  padding-left: var(--width-Desktop-M);
-  padding-right: var(--width-Desktop-M);
+.category-image.other {
   background-image: url(../imgs/steve-tsang-FnpFMheGjH0-unsplash.jpg);
-  background-position-x: 80%;
+  background-position-x: 65%;
   background-size: cover;
-  background-repeat: no-repeat;
 }
-.species-link.info {
-  padding-left: var(--width-Desktop-L);
-  padding-right: var(--width-Desktop-L);
+.category-image.info {
   background-image: url(../imgs/scarbor-siu-j9QWFny4eWw-unsplash.jpg);
-  background-position-x: 23%;
+  background-position-x: 20%;
   background-size: cover;
 }
 
-.species-link-container {
-  margin-top: 80px;
-  margin-right: 120px;
-  height: 70%;
+.category-image-name {
+  /* padding: 5px 6px 0px 6px; */
+  /* padding: 0px 1px;
+  background-color: var(--primary);
+  border-radius: 25px; */
+  text-shadow: var(--text-shadow);
 }
 
-.species-link-container:last-child {
-  margin-right: 0px;
+@media screen and (max-width: 1540px) {
+  .species-link {
+    margin-bottom: 60px;
+  }
+
+  .species-link:last-child {
+    /* margin-right: 120px; */
+  }
+
+  .species-links {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    /* margin-left: 120px; */
+  }
 }
 
 @media screen and (max-width: 1250px) {
@@ -125,57 +185,28 @@
     padding-inline: 70px;
   }
 
-  .species-link {
-    padding: 85px;
-    font-size: 19px;
-  }
-
-  .species-link-container {
-    margin-top: 90px;
-    margin-right: 50px;
-    height: 70%;
-  }
-
-  .species-link-container:first-child {
-    margin-left: 50px;
-  }
-
   .rescue-list {
     grid-template-columns: repeat(3, auto);
   }
 
-  .species-link.other {
-    padding-left: var(--width-Mobile-M);
-    padding-right: var(--width-Mobile-M);
-  }
-  .species-link.info {
-    padding-left: var(--width-Mobile-L);
-    padding-right: var(--width-Mobile-L);
-  }
-}
-@media screen and (max-width: 740px) {
-  .species-link {
-    padding: 75px;
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 690px) {
-  .adopt-container.main {
-    height: 100vh;
+  .adopt-title.cats {
+    background-position-y: 46%;
   }
 
+  .adopt-title.other {
+    background-position-y: 17%;
+  }
+}
+@media screen and (max-width: 710px) {
   .species-links {
-    display: grid;
     grid-template-columns: repeat(1, auto);
-  }
-
-  .species-link-container {
-    margin-top: 180px;
-    margin-right: 0px;
-  }
-
-  .species-link-container:first-child {
-    margin-top: 25px;
+    padding-top: 60px;
     margin-left: 0px;
+    padding-bottom: 0px;
+  }
+
+  .species-link,
+  .species-link:last-child {
+    margin-right: 0px;
   }
 }

@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import RecentRescueCard from "./RecentRescueCard/RecentRescueCard";
+import { MockRecentRescues } from "./mockRescues";
 import "swiper/swiper-bundle.css";
 import "swiper/css/autoplay";
 

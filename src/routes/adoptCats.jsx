@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import getCats from "../api/getCats";
 import AnimalListing from "../components/AnimalListing/AnimalListing";
+import { MockCats } from "../components/mockRescues";
 import "./adopt.css";
 
 export const Route = createFileRoute("/adoptCats")({
@@ -27,7 +28,7 @@ function Cats() {
   return (
     <div className="adopt-container">
       <div className="adopt-title-container">
-        <h1 className="adopt-title">CATS</h1>
+        <h1 className="adopt-title cats">CATS</h1>
       </div>
       <div className="rescue-list">
         {data.map((rescue) => (
