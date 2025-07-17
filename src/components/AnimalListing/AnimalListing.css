@@ -85,3 +85,25 @@
     margin-bottom: 20px;
   }
 }
+
+@media screen and (max-width: 420px) {
+  .rescue-details-container {
+    padding-bottom: 10px;
+  }
+
+  .rescue-details-container {
+    padding-inline: 10px;
+  }
+
+  .rescue-details-image {
+    border: solid 2px var(--primary);
+    max-height: 155px;
+    max-width: 100%;
+    border-radius: 30px;
+  }
+
+  .rescue-details-info-container {
+    margin-top: 10px;
+    height: 55px;
+  }
+}

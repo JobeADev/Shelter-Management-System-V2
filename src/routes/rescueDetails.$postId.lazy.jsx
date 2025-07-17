@@ -1,13 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createLazyFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import getRescue from "../api/getRescue";
 import RescuePage from "../components/RescuePage/RescuePage";
+// import { useState, useEffect } from "react";
+// import { MockCats } from "../components/mockRescues";
+import "./rescueDetails.css";
 
-export const Route = createFileRoute("/rescueDetails/$postId")({
+export const Route = createLazyFileRoute("/rescueDetails/$postId")({
   component: RescueDetails,
-  // loader: async ({ params }) => {
-  //   return getRescue(params.postId);
-  // },
 });
 
 function RescueDetails() {
@@ -25,6 +25,16 @@ function RescueDetails() {
       </div>
     );
   }
+
+  // const [data, setData] = useState({});
+  // function getMockRescue() {
+  //   const rescue = MockCats.find((animal) => animal.petId === +postId);
+  //   setData(rescue);
+  // }
+  // useEffect(() => {
+  //   getMockRescue();
+  // }, [postId]);
+
   return (
     <div className="rescue-details-page-container">
       <RescuePage

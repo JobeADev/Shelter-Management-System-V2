@@ -1,0 +1,22 @@
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--secondary);
+  transition: 0.2s ease-out;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: var(--hover);
+}
+
+.swiper-button-prev {
+  text-shadow: 1px 0px 4px var(--border);
+}
+
+.swiper-button-next {
+  text-shadow: -1px 0px 4px var(--border);
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--hover);
+}

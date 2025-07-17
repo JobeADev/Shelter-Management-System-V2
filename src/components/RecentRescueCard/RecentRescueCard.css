@@ -24,11 +24,14 @@
 }
 
 .rescue-card-container:hover {
-  cursor: pointer;
+  cursor: grab;
+}
+.rescue-card-container:hover:active {
+  cursor: grabbing;
 }
 
 .rescue-card {
-  width: 85%;
+  width: 80%;
   height: 100%;
 }
 
@@ -36,6 +39,7 @@
   color: var(--secondary);
   align-items: center;
   justify-content: space-around;
+  padding: 6px 0px;
 }
 
 .rescue-info-container div:first-child {
@@ -47,8 +51,8 @@
   font-size: 28px;
   text-shadow: 2px 2px 5px black;
   text-decoration: none;
-  padding: 12px 0px;
   transition: 0.5s ease-out;
+  padding: 6px 12px;
 }
 
 .rescue-name:hover {
@@ -76,6 +80,7 @@
 .side-images {
   flex-direction: column;
   width: 22%;
+  cursor: pointer;
 }
 
 .side-image {
@@ -130,6 +135,10 @@
     width: 84%;
   }
 
+  .rescue-info {
+    padding: 5px 0px;
+  }
+
   .hero {
     height: 81%;
     width: 78%;
@@ -145,6 +154,42 @@
 
   .rescue-name {
     font-size: 27px;
-    padding: 10px 0px;
+    padding: 5px 10px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .rescue-card-container {
+    height: 320px;
+  }
+
+  .rescue-card {
+    width: 80%;
+  }
+
+  .rescue-info {
+    padding: 5px 0px;
+  }
+
+  .rescue-detail {
+    font-size: 13px;
+  }
+
+  .hero {
+    height: 73%;
+    width: 78%;
+  }
+
+  .side-image {
+    height: 24.4%;
+  }
+
+  .side-images {
+    width: 22%;
+  }
+
+  .rescue-name {
+    font-size: 22px;
+    padding: 5px 10px;
   }
 }

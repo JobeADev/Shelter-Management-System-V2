@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import getDogs from "../api/getDogs";
 import AnimalListing from "../components/AnimalListing/AnimalListing";
+import { SpeciesListContext } from "../components/contexts";
 import "./adopt.css";
 
 export const Route = createFileRoute("/adoptDogs")({
@@ -9,6 +11,7 @@ export const Route = createFileRoute("/adoptDogs")({
 });
 
 function Dogs() {
+  const [, setSpeciesList] = useContext(SpeciesListContext);
   const { isLoading, data } = useQuery({
     queryKey: ["adopt-dogs"],
     queryFn: () => getDogs(),
@@ -22,12 +25,15 @@ function Dogs() {
       </div>
     );
   }
+
+  // setSpeciesList(data);
+
   return (
     <div className="adopt-container">
       <div className="adopt-title-container">
         <h1 className="adopt-title dogs">DOGS</h1>
       </div>
-      <div className="rescue-list">
+      <div className="rescue-list" onMouseEnter={() => setSpeciesList(data)}>
         {data.map((rescue) => (
           <AnimalListing
             key={rescue.petId}

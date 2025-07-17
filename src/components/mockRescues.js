@@ -17,7 +17,7 @@ export const MockCats = [
       "https://images.unsplash.com/photo-1573468164529-76caf2bfbd1c",
       "https://images.unsplash.com/photo-1716595295434-b9c43ac5d0bd",
       "https://images.unsplash.com/photo-1716595295435-7d3fa41932aa",
-      "https://images.unsplash.com/photo-1717433881869-fc90eaa78a5b]",
+      "https://images.unsplash.com/photo-1717433881869-fc90eaa78a5b",
     ],
   },
   {

@@ -8,13 +8,18 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
+import { createFileRoute } from '@tanstack/react-router'
+
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as AdoptOtherRouteImport } from './routes/adoptOther'
 import { Route as AdoptDogsRouteImport } from './routes/adoptDogs'
 import { Route as AdoptCatsRouteImport } from './routes/adoptCats'
 import { Route as AdoptRouteImport } from './routes/adopt'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as RescueDetailsPostIdRouteImport } from './routes/rescueDetails.$postId'
+
+const RescueDetailsPostIdLazyRouteImport = createFileRoute(
+  '/rescueDetails/$postId',
+)()
 
 const AdoptOtherRoute = AdoptOtherRouteImport.update({
   id: '/adoptOther',
@@ -41,11 +46,13 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RescueDetailsPostIdRoute = RescueDetailsPostIdRouteImport.update({
+const RescueDetailsPostIdLazyRoute = RescueDetailsPostIdLazyRouteImport.update({
   id: '/rescueDetails/$postId',
   path: '/rescueDetails/$postId',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() =>
+  import('./routes/rescueDetails.$postId.lazy').then((d) => d.Route),
+)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -53,7 +60,7 @@ export interface FileRoutesByFullPath {
   '/adoptCats': typeof AdoptCatsRoute
   '/adoptDogs': typeof AdoptDogsRoute
   '/adoptOther': typeof AdoptOtherRoute
-  '/rescueDetails/$postId': typeof RescueDetailsPostIdRoute
+  '/rescueDetails/$postId': typeof RescueDetailsPostIdLazyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -61,7 +68,7 @@ export interface FileRoutesByTo {
   '/adoptCats': typeof AdoptCatsRoute
   '/adoptDogs': typeof AdoptDogsRoute
   '/adoptOther': typeof AdoptOtherRoute
-  '/rescueDetails/$postId': typeof RescueDetailsPostIdRoute
+  '/rescueDetails/$postId': typeof RescueDetailsPostIdLazyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -70,7 +77,7 @@ export interface FileRoutesById {
   '/adoptCats': typeof AdoptCatsRoute
   '/adoptDogs': typeof AdoptDogsRoute
   '/adoptOther': typeof AdoptOtherRoute
-  '/rescueDetails/$postId': typeof RescueDetailsPostIdRoute
+  '/rescueDetails/$postId': typeof RescueDetailsPostIdLazyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -105,7 +112,7 @@ export interface RootRouteChildren {
   AdoptCatsRoute: typeof AdoptCatsRoute
   AdoptDogsRoute: typeof AdoptDogsRoute
   AdoptOtherRoute: typeof AdoptOtherRoute
-  RescueDetailsPostIdRoute: typeof RescueDetailsPostIdRoute
+  RescueDetailsPostIdLazyRoute: typeof RescueDetailsPostIdLazyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -149,7 +156,7 @@ declare module '@tanstack/react-router' {
       id: '/rescueDetails/$postId'
       path: '/rescueDetails/$postId'
       fullPath: '/rescueDetails/$postId'
-      preLoaderRoute: typeof RescueDetailsPostIdRouteImport
+      preLoaderRoute: typeof RescueDetailsPostIdLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -161,7 +168,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdoptCatsRoute: AdoptCatsRoute,
   AdoptDogsRoute: AdoptDogsRoute,
   AdoptOtherRoute: AdoptOtherRoute,
-  RescueDetailsPostIdRoute: RescueDetailsPostIdRoute,
+  RescueDetailsPostIdLazyRoute: RescueDetailsPostIdLazyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

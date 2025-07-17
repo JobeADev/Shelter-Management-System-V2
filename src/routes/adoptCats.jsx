@@ -1,8 +1,10 @@
+import { useState, useContext } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import getCats from "../api/getCats";
 import AnimalListing from "../components/AnimalListing/AnimalListing";
-import { MockCats } from "../components/mockRescues";
+import { SpeciesListContext } from "../components/contexts";
+// import { MockCats } from "../components/mockRescues";
 import "./adopt.css";
 
 export const Route = createFileRoute("/adoptCats")({
@@ -10,6 +12,8 @@ export const Route = createFileRoute("/adoptCats")({
 });
 
 function Cats() {
+  // const [isRescueClicked, setIsRescueClicked] = useState(false);
+  const [, setSpeciesList] = useContext(SpeciesListContext);
   const { isLoading, data } = useQuery({
     queryKey: ["adopt-cats"],
     queryFn: () => getCats(),
@@ -24,13 +28,15 @@ function Cats() {
     );
   }
 
-  // console.log(data);
+  // setSpeciesList(data);
+  // if (isRescueClicked) {
+  // }
   return (
     <div className="adopt-container">
       <div className="adopt-title-container">
         <h1 className="adopt-title cats">CATS</h1>
       </div>
-      <div className="rescue-list">
+      <div className="rescue-list" onMouseEnter={() => setSpeciesList(data)}>
         {data.map((rescue) => (
           <AnimalListing
             key={rescue.petId}
@@ -41,6 +47,7 @@ function Cats() {
             images={rescue.images}
             breed={rescue.breed}
             birthday={rescue.birthday}
+            // setIsRescueClicked={setIsRescueClicked}
           />
         ))}
       </div>

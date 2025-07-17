@@ -1,12 +1,13 @@
 import { useState, useContext, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import Dropdown from "../Dropdown/Dropdown";
-import { ClickedContext } from "../contexts";
+import { ClickedContext, SpeciesListContext } from "../contexts";
 import { AdoptItems, VolunteerItems, ResourcesItems } from "../dropdownItems";
 import "./NavBar.css";
 
 export default function NavBar() {
   const [clicked, setClicked] = useContext(ClickedContext);
+  const [, setSpeciesList] = useContext(SpeciesListContext);
   const [adoptDD, setAdoptDD] = useState(false);
   const [volunteerDD, setVolunteerDD] = useState(false);
   const [resourcesDD, setResourcesDD] = useState(false);
@@ -86,7 +87,7 @@ export default function NavBar() {
     <div className={`nav-bar-container ${showNavbar ? "show" : "hide"}`}>
       <nav className="nav-bar">
         <div className="nav-logo">
-          <Link to="/">
+          <Link to="/" onClick={() => setSpeciesList([])}>
             <i className="fa-solid fa-paw fa-3x" />
           </Link>
           {/* <Link to="/">

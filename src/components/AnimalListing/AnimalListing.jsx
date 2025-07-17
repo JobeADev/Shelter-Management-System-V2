@@ -8,6 +8,7 @@ const AnimalListing = (rescue) => {
       <Link
         to={`/rescueDetails/${rescue.petId}`}
         className="rescue-details-image-link"
+        // onClick={() => rescue.setIsRescueClicked(true)}
       >
         <img
           src={
@@ -24,6 +25,7 @@ const AnimalListing = (rescue) => {
           <Link
             to={`/rescueDetails/${rescue.petId}`}
             className="rescue-details-name-link"
+            // onClick={() => rescue.setIsRescueClicked(true)}
           >
             {rescue.name}
           </Link>

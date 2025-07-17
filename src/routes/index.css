@@ -1,7 +1,9 @@
 :root {
   --pattern-color: var(--primary);
   --pattern-width: 100px;
+  --pattern-width-mobile: 80px;
   --pattern-height: 10px;
+  --pattern-height-mobile: 9px;
 }
 
 body {
@@ -17,7 +19,7 @@ body {
 }
 
 .loader {
-  font-size: 40px;
+  font-size: 45px;
 }
 
 .cat-image {
@@ -60,27 +62,25 @@ body {
   z-index: 1;
 }
 
+.pattern-spikes-last::before,
 .pattern-spikes-first::after {
   content: "";
   position: absolute;
   width: 100%;
   height: var(--pattern-height);
   background: var(--pattern-color);
-  bottom: 0;
-  mask-image: url(../imgs/triangle-bottom.svg);
   mask-size: var(--pattern-width) var(--pattern-height);
   /* transform: rotate(0.5turn); */
 }
 
+.pattern-spikes-first::after {
+  bottom: 0;
+  mask-image: url(../imgs/triangle-bottom.svg);
+}
+
 .pattern-spikes-last::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: var(--pattern-height);
-  background: var(--pattern-color);
   top: 0;
   mask-image: url(../imgs/triangle-top.svg);
-  mask-size: var(--pattern-width) var(--pattern-height);
   /* transform: rotate(0.5turn); */
 }
 
@@ -367,5 +367,62 @@ body {
   .before-footer {
     /* background: linear-gradient(3deg, var(--hover) 30%, var(--secondary) 31%); */
     background: linear-gradient(8.2deg, var(--hover) 50%, var(--secondary) 51%);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .loader {
+    font-size: 45px;
+  }
+
+  .cat-image {
+    height: 155px;
+  }
+
+  /* .dog-image {
+    height: 300px;
+  } */
+
+  /* .dog-image-text {
+    margin-left: 110px;
+    margin-bottom: 100px;
+  } */
+
+  /* .dog-image-link {
+    font-size: 17px;
+  } */
+
+  .rr-title {
+    padding: 10px 0px;
+    font-size: 29px;
+  }
+
+  .pattern-spikes-first,
+  .pattern-spikes-last {
+    height: 10px;
+  }
+
+  .pattern-spikes-last::before,
+  .pattern-spikes-first::after {
+    height: var(--pattern-height-mobile);
+    mask-size: var(--pattern-width-mobile) var(--pattern-height-mobile);
+  }
+
+  .tooltip {
+    margin-left: 2px;
+    font-size: 12px;
+    max-width: 12ch;
+    text-align: center;
+  }
+  .tooltip {
+    padding: 0.5em;
+  }
+
+  .before-footer {
+    background: linear-gradient(
+      14.5deg,
+      var(--hover) 50%,
+      var(--secondary) 51%
+    );
   }
 }

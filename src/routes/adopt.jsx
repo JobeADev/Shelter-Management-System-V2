@@ -1,3 +1,4 @@
+// import { useState, useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { AdoptItems } from "../components/dropdownItems";
@@ -8,6 +9,25 @@ export const Route = createFileRoute("/adopt")({
 });
 
 function Adopt() {
+  // const [isLoading, setIsLoading] = useState(true);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 200);
+
+  //   return () => clearTimeout(timer);
+  //   // if (AdoptItems) {
+  //   //   setIsLoading(false);
+  //   // }
+  // }, []);
+  // if (isLoading) {
+  //   return (
+  //     <div className="loader-container">
+  //       <i className="fa fa-spinner w3-spin loader"></i>
+  //     </div>
+  //   );
+  // }
+
   return (
     <div className="adopt-container main">
       <div className="adopt-title-container">
@@ -23,6 +43,5 @@ function Adopt() {
         ))}
       </nav>
     </div>
-    // <Link to={"/adoptCats"}></Link>
   );
 }

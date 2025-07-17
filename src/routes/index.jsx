@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 // import { Link } from "@tanstack/react-router";
-import RescueSwiper from "../components/RescueSwiper";
+import RescueSwiper from "../components/RescueSwiper/RescueSwiper";
 import { ClickedContext } from "../components/contexts";
 import "./index.css";
 import getRecentRescues from "../api/getRecentRescues";
