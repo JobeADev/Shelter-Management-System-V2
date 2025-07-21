@@ -87,7 +87,7 @@ export default function NavBar() {
     <div className={`nav-bar-container ${showNavbar ? "show" : "hide"}`}>
       <nav className="nav-bar">
         <div className="nav-logo">
-          <Link to="/" onClick={() => setSpeciesList([])}>
+          <Link to="/" onClick={() => [setSpeciesList([]), setClicked(false)]}>
             <i className="fa-solid fa-paw fa-3x" />
           </Link>
           {/* <Link to="/">

@@ -1,9 +1,9 @@
 :root {
   --pattern-color: var(--primary);
   --pattern-width: 100px;
-  --pattern-width-mobile: 80px;
+  --pattern-width-mobile: 60px;
   --pattern-height: 10px;
-  --pattern-height-mobile: 9px;
+  --pattern-height-mobile: 6px;
 }
 
 body {
@@ -32,15 +32,6 @@ body {
   align-content: center;
   z-index: -1;
 }
-
-/* @keyframes wiggle {
-  0% {
-    
-  }
-  50% {
-    
-  }
-} */
 
 .pattern-spikes-first,
 .pattern-spikes-last {
@@ -238,7 +229,7 @@ body {
   .tooltip {
     margin-left: 12px;
     font-size: 18px;
-    max-width: 28ch;
+    max-width: 26ch;
     text-align: center;
   }
   .tooltip {
@@ -370,7 +361,7 @@ body {
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 430px) {
   .loader {
     font-size: 45px;
   }
@@ -419,10 +410,6 @@ body {
   }
 
   .before-footer {
-    background: linear-gradient(
-      14.5deg,
-      var(--hover) 50%,
-      var(--secondary) 51%
-    );
+    background: linear-gradient(12deg, var(--hover) 50%, var(--secondary) 51%);
   }
 }

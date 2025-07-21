@@ -111,8 +111,8 @@
   height: 100%;
   width: 100%;
   justify-content: space-around;
-  height: 850px;
-  padding-top: 50px;
+  height: 920px;
+  padding-top: 0px;
   /* padding-bottom: 65px; */
 }
 
@@ -214,13 +214,17 @@
   /* text-shadow: 0px 0px 2px black; */
 }
 
-.rescue-page-btn-back {
-  /* left: 28%; */
+.rescue-page-btn-adopt.name-long {
+  width: 190px;
+}
+
+/* .rescue-page-btn-back {
+  left: 28%;
 }
 
 .rescue-page-btn-adopt {
-  /* left: 64%; */
-}
+  left: 64%;
+} */
 
 .rescue-page-btn-back:hover,
 .rescue-page-btn-adopt:hover {
@@ -236,6 +240,10 @@
 @media screen and (max-width: 1350px) {
   .adopt-container.rescue-page {
     padding-inline: 120px;
+  }
+
+  .rescue-page-images {
+    height: 860px;
   }
 
   .rescue-page-side-images.left {
@@ -315,6 +323,10 @@
     padding-inline: 80px;
   }
 
+  .rescue-page-images {
+    height: 800px;
+  }
+
   .rescue-page-hero {
     height: 380px;
     width: 460px;
@@ -360,14 +372,7 @@
   }
 
   .rescue-page-images {
-    height: 100%;
-    width: 100%;
-    justify-content: space-around;
-    height: 700px;
-  }
-
-  .rescue-page-btn-container {
-    padding-bottom: 35px;
+    height: 760px;
   }
 
   .rescue-page-side-images {
@@ -390,7 +395,8 @@
   }
 
   .rescue-page-btn-container {
-    padding-top: 40px;
+    /* padding-top: 40px; */
+    padding-bottom: 35px;
   }
 
   .rescue-page-btn-back {
@@ -402,7 +408,7 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 430px) {
   .left-show-container,
   .right-show-container {
     display: none;
@@ -420,11 +426,6 @@
     grid-area: top;
   }
 
-  .rescue-page-contents-container {
-    /* display: grid;
-    grid-template-areas: "main"; */
-  }
-
   .rescue-page-images {
     grid-area: middle;
     /* grid-area: main; */
@@ -432,9 +433,14 @@
     grid-template-areas:
       "hero hero"
       "left right";
-    column-gap: 10px;
-    padding-top: 20px;
-    height: 1300px;
+    /* column-gap: 10px; */
+    /* padding-top: 20px; */
+    height: 1350px;
+  }
+
+  .rescue-page-images.no-images {
+    height: 730px;
+    padding-top: 22px;
   }
 
   .rescue-page-btn-container {

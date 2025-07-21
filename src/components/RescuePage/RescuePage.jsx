@@ -1,9 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import { Link } from "@tanstack/react-router";
-// import { ageInMonthsConverter, ageInYearsConverter } from "../ageConverters";
 import RescuePageHero from "./RescuePageHero";
 import RescuePageInfo from "./RescuePageInfo";
 import { LeftImageColumn, RightImageColumn } from "./RescuePageImageColumn";
+import ContentArrows from "../Arrows";
+import RescuePageButtons from "./RescuePageButtons";
 import { SpeciesListContext } from "../contexts";
 import "./RescuePage.css";
 
@@ -18,11 +19,6 @@ const RescuePage = (rescue) => {
   );
   // const handleIndexClick = (e) => setActiveIndex(+e.target.dataset.index);
 
-  useEffect(() => {
-    const selectedPath = path();
-    setBackPath(selectedPath);
-  }, []);
-
   const path = () => {
     if (rescue.species === "Cat") {
       return "/adoptCats";
@@ -34,6 +30,11 @@ const RescuePage = (rescue) => {
       return "/adoptOther";
     }
   };
+
+  useEffect(() => {
+    const selectedPath = path();
+    setBackPath(selectedPath);
+  }, []);
 
   // console.log(SpeciesList);
 
@@ -74,7 +75,13 @@ const RescuePage = (rescue) => {
           </Link>
         ) : null}
       </nav>
-      <div className="rescue-page-images">
+      <div
+        className={
+          rescue.images != null || rescue.images != undefined
+            ? "rescue-page-images"
+            : "rescue-page-images no-images"
+        }
+      >
         {rescue.images != null || rescue.images != undefined ? (
           <>
             <LeftImageColumn
@@ -89,33 +96,11 @@ const RescuePage = (rescue) => {
                   className="left-show"
                   onClick={() => setLeftClicked(!leftClicked)}
                 >
-                  <p className="show-arrow-text">
-                    {leftClicked ? "hide" : "show"}
-                  </p>
-                  {leftClicked ? (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 -5 5 10"
-                      className="left-show-arrow"
-                    >
-                      <path
-                        d="M 0 0 L 5 -5 L 5 -3 L 2 0 L 5 3 L 5 5 Z"
-                        fill="#000000"
-                      />
-                    </svg>
-                  ) : (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="-5 -5 5 10"
-                      className="left-show-arrow"
-                    >
-                      <path
-                        d="M 0 0 L -5 -5 L -5 -3 L -2 0 L -5 3 L -5 5 L 0 0"
-                        fill="#000000"
-                      />
-                    </svg>
-                  )}
-                  <p className="show-arrow-text">images</p>
+                  <ContentArrows
+                    side="left"
+                    clicked={leftClicked}
+                    sideOfShow="left-show-arrow"
+                  />
                 </div>
               </div>
             )}
@@ -137,14 +122,6 @@ const RescuePage = (rescue) => {
             color={rescue.color}
             description={rescue.description}
           />
-          {/* <section className="rescue-page-btn-container">
-              <Link to={backPath}>
-                <p className="rescue-page-btn-back">GO BACK</p>
-              </Link>
-              <Link>
-                <p className="rescue-page-btn-adopt">ADOPT</p>
-              </Link>
-            </section> */}
         </div>
         {/* )} */}
         {rescue.images != null || rescue.images != undefined ? (
@@ -155,33 +132,10 @@ const RescuePage = (rescue) => {
                   className="right-show"
                   onClick={() => setRightClicked(!rightClicked)}
                 >
-                  <p className="show-arrow-text">
-                    {rightClicked ? "hide" : "show"}
-                  </p>
-                  {rightClicked ? (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="-5 -5 5 10"
-                      className="right-show-arrow"
-                    >
-                      <path
-                        d="M 0 0 L -5 -5 L -5 -3 L -2 0 L -5 3 L -5 5 L 0 0"
-                        fill="#000000"
-                      />
-                    </svg>
-                  ) : (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 -5 5 10"
-                      className="right-show-arrow"
-                    >
-                      <path
-                        d="M 0 0 L 5 -5 L 5 -3 L 2 0 L 5 3 L 5 5 Z"
-                        fill="#000000"
-                      />
-                    </svg>
-                  )}
-                  <p className="show-arrow-text">images</p>
+                  <ContentArrows
+                    clicked={rightClicked}
+                    sideOfShow="right-show-arrow"
+                  />
                 </div>
               </div>
             )}
@@ -194,14 +148,11 @@ const RescuePage = (rescue) => {
           </>
         ) : null}
       </div>
-      <section className="rescue-page-btn-container">
-        <Link to={backPath}>
-          <p className="rescue-page-btn-back">GO BACK</p>
-        </Link>
-        <Link>
-          <p className="rescue-page-btn-adopt">ADOPT</p>
-        </Link>
-      </section>
+      <RescuePageButtons
+        backPath={backPath}
+        species={rescue.species}
+        name={rescue.name}
+      />
     </div>
   );
 };

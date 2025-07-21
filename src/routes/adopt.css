@@ -109,7 +109,6 @@
   border-radius: 20%;
   text-decoration: none;
   box-shadow: var(--shadow);
-  /* margin-right: 120px; */
 }
 
 .species-link:last-child {
@@ -165,20 +164,19 @@
     margin-bottom: 60px;
   }
 
-  .species-link:last-child {
-    /* margin-right: 120px; */
-  }
-
   .species-links {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    /* margin-left: 120px; */
   }
 }
 
 @media screen and (max-width: 1250px) {
   .adopt-container {
     padding-inline: 90px;
+  }
+
+  .adopt-title {
+    padding-top: 60px;
   }
 
   .rescue-list {
@@ -191,12 +189,16 @@
     padding-inline: 70px;
   }
 
+  .adopt-title {
+    padding-top: 55px;
+  }
+
   .rescue-list {
     grid-template-columns: repeat(3, auto);
   }
 
   .adopt-title.cats {
-    background-position-y: 46%;
+    background-position-y: 50%;
   }
 
   .adopt-title.other {
@@ -218,7 +220,7 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 430px) {
   .adopt-container {
     padding-inline: 45px;
   }

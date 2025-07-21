@@ -1,4 +1,5 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
+// import { useState, useContext } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import getCats from "../api/getCats";
