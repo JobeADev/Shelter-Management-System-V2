@@ -188,7 +188,8 @@
 }
 
 .rescue-page-none {
-  background-image: url(SMS-none.png);
+  /* background-image: url(SMS-none.png); */
+  background-image: url(../../imgs/SMS-none.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

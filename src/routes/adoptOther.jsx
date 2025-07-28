@@ -4,6 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import getOtherSpecies from "../api/getOtherSpecies";
 import AnimalListing from "../components/AnimalListing/AnimalListing";
 import { SpeciesListContext } from "../components/contexts";
+import Loader from "../components/Loader";
+// import { MockOtherSpecies } from "../components/mockRescues";
 import "./adopt.css";
 
 export const Route = createFileRoute("/adoptOther")({
@@ -19,11 +21,7 @@ function OtherSpecies() {
   });
 
   if (isLoading) {
-    return (
-      <div className="loader-container">
-        <i className="fa fa-spinner w3-spin loader"></i>
-      </div>
-    );
+    return <Loader />;
   }
 
   // setSpeciesList(data);

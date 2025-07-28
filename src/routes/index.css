@@ -1,9 +1,9 @@
 :root {
   --pattern-color: var(--primary);
-  --pattern-width: 100px;
-  --pattern-width-mobile: 60px;
+  --pattern-width-L: 5%;
+  --pattern-width-S: 10%;
   --pattern-height: 10px;
-  --pattern-height-mobile: 6px;
+  --pattern-height-mobile: 5px;
 }
 
 body {
@@ -25,7 +25,7 @@ body {
 .cat-image {
   position: relative;
   height: 700px;
-  background-image: url(../imgs/banner.jpg);
+  background-image: url(../imgs/home-banner.jpg);
   background-position-y: 71.8%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -60,7 +60,7 @@ body {
   width: 100%;
   height: var(--pattern-height);
   background: var(--pattern-color);
-  mask-size: var(--pattern-width) var(--pattern-height);
+  mask-size: var(--pattern-width-L) var(--pattern-height);
   /* transform: rotate(0.5turn); */
 }
 
@@ -268,6 +268,11 @@ body {
     font-size: 44px;
   }
 
+  .pattern-spikes-last::before,
+  .pattern-spikes-first::after {
+    mask-size: var(--pattern-width-S) var(--pattern-height);
+  }
+
   .tooltip {
     margin-left: 10px;
     font-size: 16px;
@@ -396,7 +401,7 @@ body {
   .pattern-spikes-last::before,
   .pattern-spikes-first::after {
     height: var(--pattern-height-mobile);
-    mask-size: var(--pattern-width-mobile) var(--pattern-height-mobile);
+    mask-size: var(--pattern-width-S) var(--pattern-height-mobile);
   }
 
   .tooltip {

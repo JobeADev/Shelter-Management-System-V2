@@ -26,22 +26,26 @@ export const VolunteerItems = [
   {
     title: "INTERNSHIPS",
     path: "/volunteerInternships",
+    class: "internships",
     group: "volunteer",
   },
   {
     title: "FOSTER PARENTING",
     path: "/volunteerFoster",
+    class: "foster",
   },
 ];
 
 export const ResourcesItems = [
   {
     title: "PET CARE",
-    path: "resourcesCare",
+    path: "/resourcesCare",
+    class: "pet-care",
     group: "resources",
   },
   {
     title: "SURRENDERING A PET",
-    path: "resourcesSurrender",
+    path: "/resourcesSurrender",
+    class: "surrendering",
   },
 ];

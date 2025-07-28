@@ -3,7 +3,7 @@ const LeftArrow = (props) => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 -5 5 10"
-      className={props.sideOfShow}
+      className={props.arrowClass}
     >
       <path d="M 0 0 L 5 -5 L 5 -3 L 2 0 L 5 3 L 5 5 Z" fill="#000000" />
     </svg>
@@ -15,7 +15,7 @@ const RightArrow = (props) => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="-5 -5 5 10"
-      className={props.sideOfShow}
+      className={props.arrowClass}
     >
       <path
         d="M 0 0 L -5 -5 L -5 -3 L -2 0 L -5 3 L -5 5 L 0 0"
@@ -30,9 +30,9 @@ const LeftContextArrows = (props) => {
     <>
       <p className="show-arrow-text">{props.clicked ? "hide" : "show"}</p>
       {props.clicked ? (
-        <LeftArrow sideOfShow={props.sideOfShow} />
+        <LeftArrow arrowClass={props.arrowClass} />
       ) : (
-        <RightArrow sideOfShow={props.sideOfShow} />
+        <RightArrow arrowClass={props.arrowClass} />
       )}
       <p className="show-arrow-text">images</p>
     </>
@@ -44,9 +44,9 @@ const RightContextArrows = (props) => {
     <>
       <p className="show-arrow-text">{props.clicked ? "hide" : "show"}</p>
       {props.clicked ? (
-        <RightArrow sideOfShow={props.sideOfShow} />
+        <RightArrow arrowClass={props.arrowClass} />
       ) : (
-        <LeftArrow sideOfShow={props.sideOfShow} />
+        <LeftArrow arrowClass={props.arrowClass} />
       )}
       <p className="show-arrow-text">images</p>
     </>
@@ -59,12 +59,12 @@ export default function ContentArrows(props) {
       {props.side === "left" ? (
         <LeftContextArrows
           clicked={props.clicked}
-          sideOfShow={props.sideOfShow}
+          arrowClass={props.arrowClass}
         />
       ) : (
         <RightContextArrows
           clicked={props.clicked}
-          sideOfShow={props.sideOfShow}
+          arrowClass={props.arrowClass}
         />
       )}
     </>

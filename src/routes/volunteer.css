@@ -1,0 +1,34 @@
+.adopt-title.volunteer-main {
+  /* background-image: url(../imgs/SMS-none.png);
+  background-size: cover;
+  background-position-y: 40%; */
+  background-color: #c8bfe7;
+}
+
+.category-image.internships {
+  background-image: url(../imgs/SMS-none.png);
+  background-size: cover;
+}
+.category-image.foster {
+  background-image: url(../imgs/SMS-none.png);
+  background-size: cover;
+}
+
+.info-page-content.intern-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50rem;
+}
+
+.intern-page-link {
+  font-size: 1.3em;
+  font-weight: 900;
+  color: var(--primary);
+  transition: color 0.4s ease-out;
+  padding-bottom: 1rem;
+}
+
+.intern-page-link:hover {
+  color: var(--hover);
+}

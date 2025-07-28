@@ -3,9 +3,11 @@ import { useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 // import { Link } from "@tanstack/react-router";
 import RescueSwiper from "../components/RescueSwiper/RescueSwiper";
-import { ClickedContext } from "../components/contexts";
-import "./index.css";
 import getRecentRescues from "../api/getRecentRescues";
+import { ClickedContext } from "../components/contexts";
+import Loader from "../components/Loader";
+import "./index.css";
+
 export const Route = createFileRoute("/")({
   component: Index,
 });
@@ -19,11 +21,7 @@ function Index() {
   });
 
   if (isLoading) {
-    return (
-      <div className="loader-container">
-        <i className="fa fa-spinner w3-spin loader"></i>
-      </div>
-    );
+    return <Loader />;
   }
   // console.log(data);
   return (
@@ -37,11 +35,9 @@ function Index() {
         </p> */}
       </header>
       <div className="rr-title-container">
-        <div className="pattern-spikes-first"></div>
+        <div className="pattern-spikes-first" />
         <h1 className="rr-title">Recent Rescues</h1>
-        <div className="pattern-spikes-last-container">
-          <div className="pattern-spikes-last"></div>
-        </div>
+        <div className="pattern-spikes-last" />
       </div>
       <section className="recent-rescues">
         <RescueSwiper props={data} className="rescue-swiper" />

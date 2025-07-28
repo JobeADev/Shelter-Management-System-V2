@@ -8,7 +8,7 @@ import RescuePageButtons from "./RescuePageButtons";
 import { SpeciesListContext } from "../contexts";
 import "./RescuePage.css";
 
-const RescuePage = (rescue) => {
+function RescuePage(rescue) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [leftClicked, setLeftClicked] = useState(false);
   const [rightClicked, setRightClicked] = useState(false);
@@ -99,7 +99,7 @@ const RescuePage = (rescue) => {
                   <ContentArrows
                     side="left"
                     clicked={leftClicked}
-                    sideOfShow="left-show-arrow"
+                    arrowClass="left-show-arrow"
                   />
                 </div>
               </div>
@@ -134,7 +134,7 @@ const RescuePage = (rescue) => {
                 >
                   <ContentArrows
                     clicked={rightClicked}
-                    sideOfShow="right-show-arrow"
+                    arrowClass="right-show-arrow"
                   />
                 </div>
               </div>
@@ -155,12 +155,11 @@ const RescuePage = (rescue) => {
       />
     </div>
   );
-};
+}
 
 export default RescuePage;
 
-{
-  /* <div className="rescue-page-side-images">
+/* <div className="rescue-page-side-images">
   {rescue.images.map((i, index) => (
     <div className="rescue-page-side-image-container" key={i}>
       <img
@@ -177,4 +176,3 @@ export default RescuePage;
     </div>
   ))}
 </div>; */
-}

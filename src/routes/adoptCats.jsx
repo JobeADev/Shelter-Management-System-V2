@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import getCats from "../api/getCats";
 import AnimalListing from "../components/AnimalListing/AnimalListing";
 import { SpeciesListContext } from "../components/contexts";
+import Loader from "../components/Loader";
 // import { MockCats } from "../components/mockRescues";
 import "./adopt.css";
 
@@ -22,11 +23,7 @@ function Cats() {
   });
 
   if (isLoading) {
-    return (
-      <div className="loader-container">
-        <i className="fa fa-spinner w3-spin loader"></i>
-      </div>
-    );
+    return <Loader />;
   }
 
   // setSpeciesList(data);

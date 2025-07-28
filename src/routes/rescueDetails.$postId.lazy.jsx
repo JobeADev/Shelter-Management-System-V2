@@ -1,9 +1,12 @@
+// import { useEffect } from "react";
 import { createLazyFileRoute } from "@tanstack/react-router";
+// import { createLazyFileRoute, useRouter } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import getRescue from "../api/getRescue";
 import RescuePage from "../components/RescuePage/RescuePage";
+import Loader from "../components/Loader";
 // import { useState, useEffect } from "react";
-// import { MockCats } from "../components/mockRescues";
+// import { AllMockAnimals } from "../components/mockRescues";
 import "./rescueDetails.css";
 
 export const Route = createLazyFileRoute("/rescueDetails/$postId")({
@@ -12,23 +15,32 @@ export const Route = createLazyFileRoute("/rescueDetails/$postId")({
 
 function RescueDetails() {
   const { postId } = Route.useParams();
+  // const router = useRouter();
   const { isLoading, data } = useQuery({
     queryKey: ["rescue-details", postId],
     queryFn: () => getRescue(postId),
     staleTime: 600000,
   });
 
+  // const handlePopstate = () => {
+  //   router.navigate({ to: "/adoptCats" });
+  // };
+
+  // useEffect(() => {
+  //   window.addEventListener("popstate", handlePopstate);
+
+  //   return () => {
+  //     window.removeEventListener("popstate", handlePopstate);
+  //   };
+  // }, []);
+
   if (isLoading) {
-    return (
-      <div className="loader-container">
-        <i className="fa fa-spinner w3-spin loader"></i>
-      </div>
-    );
+    return <Loader />;
   }
 
   // const [data, setData] = useState({});
   // function getMockRescue() {
-  //   const rescue = MockCats.find((animal) => animal.petId === +postId);
+  //   const rescue = AllMockAnimals.find((animal) => animal.petId === +postId);
   //   setData(rescue);
   // }
   // useEffect(() => {

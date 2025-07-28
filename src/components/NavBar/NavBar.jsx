@@ -11,11 +11,11 @@ export default function NavBar() {
   const [adoptDD, setAdoptDD] = useState(false);
   const [volunteerDD, setVolunteerDD] = useState(false);
   const [resourcesDD, setResourcesDD] = useState(false);
-  // const [classContainer, setClassContainer] = useState("");
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [makeOpac, setMakeOpac] = useState(false);
 
-  const handleScroll = () => {
+  const handleShowNavbar = () => {
     if (clicked) {
       setShowNavbar(true);
     } else if (window.scrollY > lastScrollY) {
@@ -28,20 +28,20 @@ export default function NavBar() {
     setLastScrollY(window.scrollY);
   };
 
-  //   const handleScroll = () => {
-  //   if (window.scrollY > lastScrollY && window.scrollY > 100) {
-  //     // Scrolling down and past a certain threshold
-  //     setShowNavbar(false);
-  //     setClassContainer("hide");
-  //   } else if (window.scrollY > 100) {
-  //     // Scrolling up or near the top
-  //     setShowNavbar(true);
-  //     setClassContainer("show");
-  //   } else {
-  //     setClassContainer("");
-  //   }
-  //   setLastScrollY(window.scrollY);
-  // };
+  const handleNavOpacity = () => {
+    if (window.scrollY < 70) {
+      // Scrolling up or near the top
+      setMakeOpac(false);
+    } else if (window.scrollY >= 78) {
+      // Scrolling down and past a certain threshold
+      setMakeOpac(true);
+    }
+  };
+
+  function handleScroll() {
+    handleShowNavbar();
+    handleNavOpacity();
+  }
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -85,7 +85,7 @@ export default function NavBar() {
 
   return (
     <div className={`nav-bar-container ${showNavbar ? "show" : "hide"}`}>
-      <nav className="nav-bar">
+      <nav className={makeOpac && !clicked ? "nav-bar make-opac" : "nav-bar"}>
         <div className="nav-logo">
           <Link to="/" onClick={() => [setSpeciesList([]), setClicked(false)]}>
             <i className="fa-solid fa-paw fa-3x" />
@@ -113,7 +113,7 @@ export default function NavBar() {
             >
               ADOPT
             </Link>
-            {adoptDD ? <Dropdown props={AdoptItems} /> : null}
+            {adoptDD && <Dropdown props={AdoptItems} />}
           </li>
           <li
             className="nav-option"
@@ -127,7 +127,7 @@ export default function NavBar() {
             >
               VOLUNTEER
             </Link>
-            {volunteerDD ? <Dropdown props={VolunteerItems} /> : null}
+            {volunteerDD && <Dropdown props={VolunteerItems} />}
           </li>
           <li
             className="nav-option"
@@ -141,7 +141,7 @@ export default function NavBar() {
             >
               RESOURCES
             </Link>
-            {resourcesDD ? <Dropdown props={ResourcesItems} /> : null}
+            {resourcesDD && <Dropdown props={ResourcesItems} />}
           </li>
           <li className="nav-option">
             <Link

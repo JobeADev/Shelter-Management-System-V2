@@ -2,9 +2,16 @@
 .adopt-container,
 .adopt-title-container,
 .species-links,
-.loader-container {
+.loader-container,
+.info-page-content,
+.info-page-item-contents {
   display: flex;
 }
+
+/* this is meant to help with FOUC */
+/* .adopt-container.main {
+  display: flex !important;
+} */
 
 .loader-container {
   height: 100vh;
@@ -22,7 +29,7 @@
   text-align: center;
   width: 100%;
   padding-inline: 180px;
-  background-color: rgb(141, 102, 141);
+  background-color: var(--inline-color);
 }
 
 .adopt-title {
@@ -41,10 +48,14 @@
   z-index: 1;
 }
 
+.adopt-title.blank-banner {
+  background-color: #c8bfe7;
+}
+
 .adopt-title.adopt-main {
-  background-image: url(../imgs/elena-mozhvilo-BY2lWVC1uQ4-unsplash.jpg);
+  background-image: url(../imgs/adopt-banner.jpg);
   background-size: cover;
-  background-position-y: 40%;
+  background-position-y: 30%;
 }
 
 /* .adopt-title.adopt-main {
@@ -54,25 +65,25 @@
 } */
 
 .adopt-title.cats {
-  background-image: url(../imgs/feyza-yildirim-4mlHLfKEzGg-unsplash.jpg);
+  background-image: url(../imgs/cats-image.jpg);
   background-size: cover;
   background-position: center;
 }
 
 .adopt-title.dogs {
-  background-image: url(../imgs/joshua-hanson-b_iWBn_4xzs-unsplash.jpg);
+  background-image: url(../imgs/dogs-image.jpg);
   background-size: cover;
   background-position-y: 49%;
 }
 
 .adopt-title.other {
-  background-image: url(../imgs/steve-tsang-FnpFMheGjH0-unsplash.jpg);
+  background-image: url(../imgs/others-image.jpg);
   background-size: cover;
   background-position-y: 24%;
 }
 
 .adopt-title.info {
-  background-image: url(../imgs/scarbor-siu-j9QWFny4eWw-unsplash.jpg);
+  background-image: url(../imgs/info-image.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -93,7 +104,8 @@
 }
 
 .adopt-title-container,
-.rescue-list {
+.rescue-list,
+.info-page-content {
   background-color: var(--secondary);
 }
 
@@ -132,21 +144,21 @@
 }
 
 .category-image.cats {
-  background-image: url(../imgs/feyza-yildirim-4mlHLfKEzGg-unsplash.jpg);
+  background-image: url(../imgs/cats-image.jpg);
   background-size: cover;
 }
 .category-image.dogs {
-  background-image: url(../imgs/joshua-hanson-b_iWBn_4xzs-unsplash.jpg);
+  background-image: url(../imgs/dogs-image.jpg);
   background-position-y: 92%;
   background-size: cover;
 }
 .category-image.other {
-  background-image: url(../imgs/steve-tsang-FnpFMheGjH0-unsplash.jpg);
+  background-image: url(../imgs/others-image.jpg);
   background-position-x: 65%;
   background-size: cover;
 }
 .category-image.info {
-  background-image: url(../imgs/scarbor-siu-j9QWFny4eWw-unsplash.jpg);
+  background-image: url(../imgs/info-image.jpg);
   background-position-x: 20%;
   background-size: cover;
 }
@@ -157,6 +169,77 @@
   background-color: var(--primary);
   border-radius: 25px; */
   text-shadow: var(--text-shadow);
+}
+
+.info-page-content {
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-page-intro {
+  padding-top: 85px;
+  padding-bottom: 60px;
+  margin-bottom: 20px;
+  font-size: 21px;
+  font-weight: 500;
+  padding-inline: 30px;
+  text-shadow: 0px 0px 3px rgb(214, 214, 240);
+  /* background-color: rgb(233, 233, 243); */
+}
+
+.info-page-section-title {
+  font-family: var(--font);
+  font-size: 35px;
+  font-weight: 600;
+  border-bottom: solid 3px var(--primary);
+  width: 50%;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+.info-page-list {
+  /* text-align: left; */
+  padding-bottom: 80px;
+}
+
+.info-page-list.services {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  column-gap: 50px;
+}
+
+.info-page-item {
+  font-size: 17px;
+  text-align: left;
+  margin-top: 2px;
+  padding-inline: 6px;
+}
+
+.info-page-item.services {
+  padding-left: 4px;
+  padding-right: 0px;
+}
+
+.info-page-item.even {
+  background-color: rgb(233, 233, 243);
+  border-radius: 3px;
+}
+
+.info-page-item:first-child {
+  margin-top: 0px;
+}
+
+.info-page-item::marker {
+  color: var(--hover);
+  font-size: 10px;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 700;
+  content: "\f1b0";
+}
+
+.info-page-item-contents {
+  justify-content: space-between;
+  width: 500px;
 }
 
 @media screen and (max-width: 1540px) {
@@ -182,6 +265,15 @@
   .rescue-list {
     grid-template-columns: repeat(4, auto);
   }
+
+  .info-page-item-contents {
+    width: 350px;
+  }
+
+  .info-page-list.services {
+    grid-template-columns: repeat(2, auto);
+    column-gap: 40px;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -197,6 +289,10 @@
     grid-template-columns: repeat(3, auto);
   }
 
+  .adopt-title.adopt-main {
+    background-position-y: 10%;
+  }
+
   .adopt-title.cats {
     background-position-y: 50%;
   }
@@ -207,6 +303,10 @@
 }
 
 @media screen and (max-width: 710px) {
+  .rescue-list {
+    grid-template-columns: repeat(2, auto);
+  }
+
   .species-links {
     grid-template-columns: repeat(1, auto);
     padding-top: 60px;
@@ -217,6 +317,18 @@
   .species-link,
   .species-link:last-child {
     margin-right: 0px;
+  }
+
+  .info-page-section-title {
+    width: 100%;
+  }
+
+  .info-page-content {
+    padding-inline: 30px;
+  }
+
+  .info-page-intro {
+    padding-inline: 0px;
   }
 }
 
@@ -252,11 +364,23 @@
     /* column-gap: 5px; */
   }
 
+  .adopt-title.adopt-main {
+    background-position: center;
+  }
+
   .adopt-title.cats {
-    background-position-y: 50%;
+    background-position-y: 48%;
   }
 
   .adopt-title.other {
     background-position-y: 27%;
+  }
+
+  .info-page-item-contents {
+    width: 250px;
+  }
+
+  .info-page-list.services {
+    grid-template-columns: repeat(1, auto);
   }
 }

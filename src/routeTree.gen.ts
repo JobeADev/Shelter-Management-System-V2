@@ -11,19 +11,80 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VolunteerInternshipsRouteImport } from './routes/volunteerInternships'
+import { Route as VolunteerFosterRouteImport } from './routes/volunteerFoster'
+import { Route as VolunteerRouteImport } from './routes/volunteer'
+import { Route as ResourcesSurrenderRouteImport } from './routes/resourcesSurrender'
+import { Route as ResourcesCareRouteImport } from './routes/resourcesCare'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as LocationInfoRouteImport } from './routes/locationInfo'
+import { Route as DonateRouteImport } from './routes/donate'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AdoptOtherRouteImport } from './routes/adoptOther'
+import { Route as AdoptInfoRouteImport } from './routes/adoptInfo'
 import { Route as AdoptDogsRouteImport } from './routes/adoptDogs'
 import { Route as AdoptCatsRouteImport } from './routes/adoptCats'
 import { Route as AdoptRouteImport } from './routes/adopt'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const RescueDetailsPostIdLazyRouteImport = createFileRoute(
   '/rescueDetails/$postId',
 )()
 
+const VolunteerInternshipsRoute = VolunteerInternshipsRouteImport.update({
+  id: '/volunteerInternships',
+  path: '/volunteerInternships',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VolunteerFosterRoute = VolunteerFosterRouteImport.update({
+  id: '/volunteerFoster',
+  path: '/volunteerFoster',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VolunteerRoute = VolunteerRouteImport.update({
+  id: '/volunteer',
+  path: '/volunteer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesSurrenderRoute = ResourcesSurrenderRouteImport.update({
+  id: '/resourcesSurrender',
+  path: '/resourcesSurrender',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesCareRoute = ResourcesCareRouteImport.update({
+  id: '/resourcesCare',
+  path: '/resourcesCare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationInfoRoute = LocationInfoRouteImport.update({
+  id: '/locationInfo',
+  path: '/locationInfo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DonateRoute = DonateRouteImport.update({
+  id: '/donate',
+  path: '/donate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdoptOtherRoute = AdoptOtherRouteImport.update({
   id: '/adoptOther',
   path: '/adoptOther',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdoptInfoRoute = AdoptInfoRouteImport.update({
+  id: '/adoptInfo',
+  path: '/adoptInfo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdoptDogsRoute = AdoptDogsRouteImport.update({
@@ -41,6 +102,11 @@ const AdoptRoute = AdoptRouteImport.update({
   path: '/adopt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -56,72 +122,219 @@ const RescueDetailsPostIdLazyRoute = RescueDetailsPostIdLazyRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/adopt': typeof AdoptRoute
   '/adoptCats': typeof AdoptCatsRoute
   '/adoptDogs': typeof AdoptDogsRoute
+  '/adoptInfo': typeof AdoptInfoRoute
   '/adoptOther': typeof AdoptOtherRoute
+  '/contact': typeof ContactRoute
+  '/donate': typeof DonateRoute
+  '/locationInfo': typeof LocationInfoRoute
+  '/resources': typeof ResourcesRoute
+  '/resourcesCare': typeof ResourcesCareRoute
+  '/resourcesSurrender': typeof ResourcesSurrenderRoute
+  '/volunteer': typeof VolunteerRoute
+  '/volunteerFoster': typeof VolunteerFosterRoute
+  '/volunteerInternships': typeof VolunteerInternshipsRoute
   '/rescueDetails/$postId': typeof RescueDetailsPostIdLazyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/adopt': typeof AdoptRoute
   '/adoptCats': typeof AdoptCatsRoute
   '/adoptDogs': typeof AdoptDogsRoute
+  '/adoptInfo': typeof AdoptInfoRoute
   '/adoptOther': typeof AdoptOtherRoute
+  '/contact': typeof ContactRoute
+  '/donate': typeof DonateRoute
+  '/locationInfo': typeof LocationInfoRoute
+  '/resources': typeof ResourcesRoute
+  '/resourcesCare': typeof ResourcesCareRoute
+  '/resourcesSurrender': typeof ResourcesSurrenderRoute
+  '/volunteer': typeof VolunteerRoute
+  '/volunteerFoster': typeof VolunteerFosterRoute
+  '/volunteerInternships': typeof VolunteerInternshipsRoute
   '/rescueDetails/$postId': typeof RescueDetailsPostIdLazyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/adopt': typeof AdoptRoute
   '/adoptCats': typeof AdoptCatsRoute
   '/adoptDogs': typeof AdoptDogsRoute
+  '/adoptInfo': typeof AdoptInfoRoute
   '/adoptOther': typeof AdoptOtherRoute
+  '/contact': typeof ContactRoute
+  '/donate': typeof DonateRoute
+  '/locationInfo': typeof LocationInfoRoute
+  '/resources': typeof ResourcesRoute
+  '/resourcesCare': typeof ResourcesCareRoute
+  '/resourcesSurrender': typeof ResourcesSurrenderRoute
+  '/volunteer': typeof VolunteerRoute
+  '/volunteerFoster': typeof VolunteerFosterRoute
+  '/volunteerInternships': typeof VolunteerInternshipsRoute
   '/rescueDetails/$postId': typeof RescueDetailsPostIdLazyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/adopt'
     | '/adoptCats'
     | '/adoptDogs'
+    | '/adoptInfo'
     | '/adoptOther'
+    | '/contact'
+    | '/donate'
+    | '/locationInfo'
+    | '/resources'
+    | '/resourcesCare'
+    | '/resourcesSurrender'
+    | '/volunteer'
+    | '/volunteerFoster'
+    | '/volunteerInternships'
     | '/rescueDetails/$postId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/adopt'
     | '/adoptCats'
     | '/adoptDogs'
+    | '/adoptInfo'
     | '/adoptOther'
+    | '/contact'
+    | '/donate'
+    | '/locationInfo'
+    | '/resources'
+    | '/resourcesCare'
+    | '/resourcesSurrender'
+    | '/volunteer'
+    | '/volunteerFoster'
+    | '/volunteerInternships'
     | '/rescueDetails/$postId'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/adopt'
     | '/adoptCats'
     | '/adoptDogs'
+    | '/adoptInfo'
     | '/adoptOther'
+    | '/contact'
+    | '/donate'
+    | '/locationInfo'
+    | '/resources'
+    | '/resourcesCare'
+    | '/resourcesSurrender'
+    | '/volunteer'
+    | '/volunteerFoster'
+    | '/volunteerInternships'
     | '/rescueDetails/$postId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AdoptRoute: typeof AdoptRoute
   AdoptCatsRoute: typeof AdoptCatsRoute
   AdoptDogsRoute: typeof AdoptDogsRoute
+  AdoptInfoRoute: typeof AdoptInfoRoute
   AdoptOtherRoute: typeof AdoptOtherRoute
+  ContactRoute: typeof ContactRoute
+  DonateRoute: typeof DonateRoute
+  LocationInfoRoute: typeof LocationInfoRoute
+  ResourcesRoute: typeof ResourcesRoute
+  ResourcesCareRoute: typeof ResourcesCareRoute
+  ResourcesSurrenderRoute: typeof ResourcesSurrenderRoute
+  VolunteerRoute: typeof VolunteerRoute
+  VolunteerFosterRoute: typeof VolunteerFosterRoute
+  VolunteerInternshipsRoute: typeof VolunteerInternshipsRoute
   RescueDetailsPostIdLazyRoute: typeof RescueDetailsPostIdLazyRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/volunteerInternships': {
+      id: '/volunteerInternships'
+      path: '/volunteerInternships'
+      fullPath: '/volunteerInternships'
+      preLoaderRoute: typeof VolunteerInternshipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/volunteerFoster': {
+      id: '/volunteerFoster'
+      path: '/volunteerFoster'
+      fullPath: '/volunteerFoster'
+      preLoaderRoute: typeof VolunteerFosterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/volunteer': {
+      id: '/volunteer'
+      path: '/volunteer'
+      fullPath: '/volunteer'
+      preLoaderRoute: typeof VolunteerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resourcesSurrender': {
+      id: '/resourcesSurrender'
+      path: '/resourcesSurrender'
+      fullPath: '/resourcesSurrender'
+      preLoaderRoute: typeof ResourcesSurrenderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resourcesCare': {
+      id: '/resourcesCare'
+      path: '/resourcesCare'
+      fullPath: '/resourcesCare'
+      preLoaderRoute: typeof ResourcesCareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locationInfo': {
+      id: '/locationInfo'
+      path: '/locationInfo'
+      fullPath: '/locationInfo'
+      preLoaderRoute: typeof LocationInfoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/donate': {
+      id: '/donate'
+      path: '/donate'
+      fullPath: '/donate'
+      preLoaderRoute: typeof DonateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/adoptOther': {
       id: '/adoptOther'
       path: '/adoptOther'
       fullPath: '/adoptOther'
       preLoaderRoute: typeof AdoptOtherRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adoptInfo': {
+      id: '/adoptInfo'
+      path: '/adoptInfo'
+      fullPath: '/adoptInfo'
+      preLoaderRoute: typeof AdoptInfoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/adoptDogs': {
@@ -145,6 +358,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdoptRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -164,10 +384,21 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AdoptRoute: AdoptRoute,
   AdoptCatsRoute: AdoptCatsRoute,
   AdoptDogsRoute: AdoptDogsRoute,
+  AdoptInfoRoute: AdoptInfoRoute,
   AdoptOtherRoute: AdoptOtherRoute,
+  ContactRoute: ContactRoute,
+  DonateRoute: DonateRoute,
+  LocationInfoRoute: LocationInfoRoute,
+  ResourcesRoute: ResourcesRoute,
+  ResourcesCareRoute: ResourcesCareRoute,
+  ResourcesSurrenderRoute: ResourcesSurrenderRoute,
+  VolunteerRoute: VolunteerRoute,
+  VolunteerFosterRoute: VolunteerFosterRoute,
+  VolunteerInternshipsRoute: VolunteerInternshipsRoute,
   RescueDetailsPostIdLazyRoute: RescueDetailsPostIdLazyRoute,
 }
 export const routeTree = rootRouteImport

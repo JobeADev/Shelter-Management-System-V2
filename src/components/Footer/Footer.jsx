@@ -27,12 +27,10 @@ export default function Footer() {
               </Link>
             </li>
             <li className="footer-option">
-              <Link to="/careers" className="footer-link">
-                CAREERS
-              </Link>
+              <Link className="footer-link">CAREERS</Link>
             </li>
             <li className="footer-option">
-              <Link to="location-info" className="footer-link">
+              <Link to="locationInfo" className="footer-link">
                 LOCATION
               </Link>
             </li>

@@ -6,7 +6,9 @@ const AnimalListing = (rescue) => {
   return (
     <nav className="rescue-details-container">
       <Link
-        to={`/rescueDetails/${rescue.petId}`}
+        // to={`/rescueDetails/${rescue.petId}`}
+        to="/rescueDetails/$postId"
+        params={{ postId: rescue.petId }}
         className="rescue-details-image-link"
         // onClick={() => rescue.setIsRescueClicked(true)}
       >

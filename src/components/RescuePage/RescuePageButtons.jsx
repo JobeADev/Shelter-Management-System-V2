@@ -6,19 +6,21 @@ export default function RescuePageButtons(props) {
       <Link to={props.backPath}>
         <p className="rescue-page-btn-back">
           {props.species === "Cat" || props.species === "Dog"
-            ? `SEE ALL ${props.species.toUpperCase()}S`
-            : "SEE ALL OTHERS"}
+            ? `ALL ${props.species.toUpperCase()}S`
+            : "ALL OTHERS"}
         </p>
       </Link>
-      <Link>
-        <p
-          className={
-            props.name.length < 7
-              ? "rescue-page-btn-adopt"
-              : "rescue-page-btn-adopt name-long"
-          }
-        >{`ADOPT ${props.name.toUpperCase()}`}</p>
-      </Link>
+      {props.name != undefined ? (
+        <Link>
+          <p
+            className={
+              props.name.length < 7
+                ? "rescue-page-btn-adopt"
+                : "rescue-page-btn-adopt name-long"
+            }
+          >{`ADOPT ${props.name.toUpperCase()}`}</p>
+        </Link>
+      ) : null}
     </section>
   );
 }

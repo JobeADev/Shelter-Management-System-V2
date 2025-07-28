@@ -14,7 +14,7 @@ const RescueSwiper = (data) => {
       // centeredSlides={true}
       spaceBetween={0}
       slidesPerView={1}
-      autoplay={{ delay: 5000, disableOnInteraction: true }}
+      autoplay={{ delay: 4500, disableOnInteraction: true }}
       navigation={true}
       pagination={{ clickable: true }}
       // onSlideChange={() => console.log("slide change")}

@@ -29,6 +29,7 @@ function Adopt() {
   // }
 
   return (
+    // may add style={{ display: "none" }} to outermost div to help with FOUC
     <div className="adopt-container main">
       <div className="adopt-title-container">
         <h1 className="adopt-title adopt-main">ADOPT</h1>
