@@ -1,16 +1,16 @@
 .adopt-title.resources-main {
-  /* background-image: url(../imgs/SMS-none.png);
+  /* background-image: url(../../public/SMS-none.png);
   background-size: cover;
   background-position-y: 40%; */
   background-color: #c8bfe7;
 }
 
 .category-image.pet-care {
-  background-image: url(../imgs/SMS-none.png);
+  background-image: url(../../public/SMS-none.png);
   background-size: cover;
 }
 .category-image.surrendering {
-  background-image: url(../imgs/SMS-none.png);
+  background-image: url(../../public/SMS-none.png);
   background-size: cover;
 }
 

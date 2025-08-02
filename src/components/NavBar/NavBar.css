@@ -170,18 +170,18 @@
   background-color: var(--hover);
 }
 
-.nav-home-paw-logo {
+/* .nav-home-paw-logo {
   background-image: url(White-Paw-64x64.png);
   background-size: cover;
   background-repeat: no-repeat;
   width: 56px;
   height: 56px;
   transition: 0.5s ease-out;
-}
+} */
 
-.nav-home-paw-logo:hover {
+/* .nav-home-paw-logo:hover {
   background-image: url(Hover-Paw-64x64.png);
-}
+} */
 
 @media screen and (max-width: 1200px) {
   .menu {

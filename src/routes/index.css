@@ -29,7 +29,7 @@ body {
 .cat-image {
   position: relative;
   height: 700px;
-  background-image: url(../imgs/home-banner.jpg);
+  background-image: url(../../public/home-banner.jpg);
   background-position-y: 71.8%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -70,28 +70,28 @@ body {
 
 .pattern-spikes-first::after {
   bottom: 0;
-  mask-image: url(../imgs/triangle-bottom.svg);
+  mask-image: url(../../public/triangle-bottom.svg);
 }
 
 .pattern-spikes-last::before {
   top: 0;
-  mask-image: url(../imgs/triangle-top.svg);
+  mask-image: url(../../public/triangle-top.svg);
   /* transform: rotate(0.5turn); */
 }
 
-.dog-image {
+/* .dog-image {
   height: 700px;
   background-image: url(../imgs/gowtham-agm-Hcgv-TBKnTE-unsplash.jpg);
-  /* background-image: url(../imgs/chirag-dulyan-pScqBIlWnxE-unsplash.jpg); */
-  /* Photo by <a href="https://unsplash.com/@gowthamagm?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Gowtham AGM</a> on <a href="https://unsplash.com/photos/a-group-of-three-puppies-sitting-next-to-each-other-Hcgv-TBKnTE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> */
-  /* Photo by <a href="https://unsplash.com/@chirag22?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Chirag Dulyan</a> on <a href="https://unsplash.com/photos/brown-and-black-short-coated-puppy-on-green-textile-pScqBIlWnxE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> */
+  background-image: url(../imgs/chirag-dulyan-pScqBIlWnxE-unsplash.jpg);
+  Photo by <a href="https://unsplash.com/@gowthamagm?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Gowtham AGM</a> on <a href="https://unsplash.com/photos/a-group-of-three-puppies-sitting-next-to-each-other-Hcgv-TBKnTE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  Photo by <a href="https://unsplash.com/@chirag22?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Chirag Dulyan</a> on <a href="https://unsplash.com/photos/brown-and-black-short-coated-puppy-on-green-textile-pScqBIlWnxE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
   background-position-y: 41.8%;
-  /* background-position-y: 64%; */
+  background-position-y: 64%;
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
   align-content: center;
-}
+} */
 
 .dog-image-text {
   /* position: relative; */

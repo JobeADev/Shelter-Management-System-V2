@@ -1,16 +1,16 @@
 .adopt-title.volunteer-main {
-  /* background-image: url(../imgs/SMS-none.png);
+  /* background-image: url(../../public/SMS-none.png);
   background-size: cover;
   background-position-y: 40%; */
   background-color: #c8bfe7;
 }
 
 .category-image.internships {
-  background-image: url(../imgs/SMS-none.png);
+  background-image: url(../../public/SMS-none.png);
   background-size: cover;
 }
 .category-image.foster {
-  background-image: url(../imgs/SMS-none.png);
+  background-image: url(../../public/SMS-none.png);
   background-size: cover;
 }
 

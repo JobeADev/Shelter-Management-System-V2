@@ -44,18 +44,18 @@
   font-size: 1.1rem;
 }
 
-.footer-home-paw-logo {
+/* .footer-home-paw-logo {
   background-image: url(White-Paw-48x48.png);
   background-size: cover;
   background-repeat: no-repeat;
   width: 50px;
   height: 50px;
   transition: 0.5s ease-out;
-}
+} */
 
-.footer-home-paw-logo:hover {
+/* .footer-home-paw-logo:hover {
   background-image: url(Hover-Paw-48x48.png);
-}
+} */
 
 .footer-option {
   list-style: none;
