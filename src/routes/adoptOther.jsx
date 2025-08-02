@@ -1,4 +1,5 @@
 import { useContext } from "react";
+// import { useState, useContext } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import getOtherSpecies from "../api/getOtherSpecies";
@@ -39,6 +40,7 @@ function OtherSpecies() {
     >
       <Title classOption="other" title="other animals" />
       <div className="rescue-list" onMouseEnter={() => setSpeciesList(data)}>
+        {/* <div className={MockOtherSpecies.length < 6 ? "rescue-list short" : "rescue-list"} onMouseEnter={() => setSpeciesList(data)}> */}
         {data.map((rescue) => (
           <AnimalListing
             key={rescue.petId}

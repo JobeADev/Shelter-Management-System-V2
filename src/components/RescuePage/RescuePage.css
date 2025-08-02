@@ -222,6 +222,10 @@
   width: 190px;
 }
 
+.rescue-page-btn-adopt.name-xlong {
+  width: 230px;
+}
+
 /* .rescue-page-btn-back {
   left: 28%;
 }

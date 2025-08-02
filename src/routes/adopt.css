@@ -102,6 +102,10 @@
   padding-bottom: 40px;
 }
 
+.rescue-list.short {
+  padding-bottom: 300px;
+}
+
 .adopt-title-container,
 .rescue-list,
 .info-page-content {
@@ -262,6 +266,10 @@
   .species-links.main {
     padding-bottom: 70px;
   }
+
+  .rescue-list.short {
+    padding-bottom: 300px;
+  }
 }
 
 @media screen and (max-width: 1250px) {
@@ -298,6 +306,10 @@
 
   .rescue-list {
     grid-template-columns: repeat(3, auto);
+  }
+
+  .rescue-list.short {
+    padding-bottom: 60px;
   }
 
   .adopt-title.adopt-main {

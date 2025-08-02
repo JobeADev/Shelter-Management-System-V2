@@ -5,7 +5,7 @@ function MockLoader(props) {
   useEffect(() => {
     const timer = setTimeout(() => {
       props.setIsLoading(false);
-    }, 100);
+    }, 60);
 
     return () => clearTimeout(timer);
   }, []);

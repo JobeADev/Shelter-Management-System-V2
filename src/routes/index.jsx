@@ -5,6 +5,7 @@ import RescueSwiper from "../components/RescueSwiper/RescueSwiper";
 import getRecentRescues from "../api/getRecentRescues";
 import { ClickedContext } from "../components/contexts";
 import Loader from "../components/Loader";
+// import { MockRecentRescues } from "../components/mockRescues";
 // import MockLoader from "../components/MockLoader/MockLoader";
 import "./index.css";
 
