@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
-// import { Link } from "@tanstack/react-router";
 import RescueSwiper from "../components/RescueSwiper/RescueSwiper";
 import getRecentRescues from "../api/getRecentRescues";
 import { ClickedContext } from "../components/contexts";
 import Loader from "../components/Loader";
+// import MockLoader from "../components/MockLoader/MockLoader";
 import "./index.css";
 
 export const Route = createFileRoute("/")({
@@ -23,16 +23,16 @@ function Index() {
   if (isLoading) {
     return <Loader />;
   }
-  // console.log(data);
+
+  // const [isLoading, setIsLoading] = useState(true);
+  // if (isLoading) {
+  //   return <MockLoader setIsLoading={setIsLoading} />;
+  // }
+
   return (
-    <div className={clicked ? "index clicked" : "index"}>
+    <div className={clicked ? "index clicked-noShow" : "index"}>
       <header className="cat-image">
         <div className="tooltip">Why are they staring at us?</div>
-        {/* <p className="dog-image-text">
-          <Link to="adopt" className="dog-image-link">
-            CAN YOU MAKE A DIFFERENCE?
-          </Link>
-        </p> */}
       </header>
       <div className="rr-title-container">
         <div className="pattern-spikes-first" />

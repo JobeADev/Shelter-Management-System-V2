@@ -14,12 +14,14 @@
   background-size: cover;
 }
 
-.info-page-content.intern-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 50rem;
+.info-page-intro.foster-page:last-of-type {
+  padding-top: 55px;
+  padding-bottom: 0px;
 }
+
+/* .info-page-content.intern-page {
+
+} */
 
 .intern-page-link {
   font-size: 1.3em;

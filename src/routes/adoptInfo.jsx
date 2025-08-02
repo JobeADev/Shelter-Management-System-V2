@@ -1,5 +1,8 @@
+import { useContext } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { NeedsList, FeesList, ServicesList } from "../components/listContents";
+import { ClickedContext } from "../components/contexts";
+import { NeedsList, FeesList, ServicesList } from "../components/data";
+import Title from "../components/Title";
 import "./adopt.css";
 
 export const Route = createFileRoute("/adoptInfo")({
@@ -7,11 +10,13 @@ export const Route = createFileRoute("/adoptInfo")({
 });
 
 function AdoptInfo() {
+  const [clicked] = useContext(ClickedContext);
+
   return (
-    <div className="adopt-container">
-      <div className="adopt-title-container">
-        <h1 className="adopt-title info">ADOPTION INFO</h1>
-      </div>
+    <div
+      className={clicked ? "adopt-container clicked-noShow" : "adopt-container"}
+    >
+      <Title classOption="info" title="adoption info" />
       <section className="info-page-content">
         <p className="info-page-intro">
           Ready to welcome a new furry friend? As you prepare to visit, take a

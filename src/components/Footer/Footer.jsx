@@ -27,11 +27,13 @@ export default function Footer() {
               </Link>
             </li>
             <li className="footer-option">
-              <Link className="footer-link">CAREERS</Link>
+              <Link to="" className="footer-link">
+                CAREERS
+              </Link>
             </li>
             <li className="footer-option">
-              <Link to="locationInfo" className="footer-link">
-                LOCATION
+              <Link to="" className="footer-link">
+                CONTACT
               </Link>
             </li>
           </ul>
@@ -42,16 +44,16 @@ export default function Footer() {
         <section className="social-links-container">
           <h3 className="social-links-title">CONNECT WITH US</h3>
           <div className="social-links">
-            <Link className="social-link">
+            <Link to="" className="social-link">
               <i className="fa-brands fa-facebook"></i>
             </Link>
-            <Link className="social-link">
+            <Link to="" className="social-link">
               <i className="fa-brands fa-instagram"></i>
             </Link>
-            <Link className="social-link">
+            <Link to="" className="social-link">
               <i className="fa-brands fa-x-twitter"></i>
             </Link>
-            <Link className="social-link">
+            <Link to="" className="social-link">
               <i className="fa-brands fa-youtube"></i>
             </Link>
           </div>

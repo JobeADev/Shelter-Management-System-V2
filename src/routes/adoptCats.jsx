@@ -4,9 +4,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import getCats from "../api/getCats";
 import AnimalListing from "../components/AnimalListing/AnimalListing";
+import { ClickedContext } from "../components/contexts";
 import { SpeciesListContext } from "../components/contexts";
 import Loader from "../components/Loader";
+import Title from "../components/Title";
 // import { MockCats } from "../components/mockRescues";
+// import MockLoader from "../components/MockLoader/MockLoader";
 import "./adopt.css";
 
 export const Route = createFileRoute("/adoptCats")({
@@ -15,6 +18,7 @@ export const Route = createFileRoute("/adoptCats")({
 
 function Cats() {
   // const [isRescueClicked, setIsRescueClicked] = useState(false);
+  const [clicked] = useContext(ClickedContext);
   const [, setSpeciesList] = useContext(SpeciesListContext);
   const { isLoading, data } = useQuery({
     queryKey: ["adopt-cats"],
@@ -26,14 +30,16 @@ function Cats() {
     return <Loader />;
   }
 
-  // setSpeciesList(data);
-  // if (isRescueClicked) {
+  // const [isLoading, setIsLoading] = useState(true);
+  // if (isLoading) {
+  //   return <MockLoader setIsLoading={setIsLoading} />;
   // }
+
   return (
-    <div className="adopt-container">
-      <div className="adopt-title-container">
-        <h1 className="adopt-title cats">CATS</h1>
-      </div>
+    <div
+      className={clicked ? "adopt-container clicked-noShow" : "adopt-container"}
+    >
+      <Title classOption="cats" title="cats" />
       <div className="rescue-list" onMouseEnter={() => setSpeciesList(data)}>
         {data.map((rescue) => (
           <AnimalListing

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
+import Title from "../components/Title";
 
 export const Route = createFileRoute("/volunteerInternships")({
   component: Internships,
@@ -8,10 +9,8 @@ export const Route = createFileRoute("/volunteerInternships")({
 function Internships() {
   return (
     <div className="adopt-container">
-      <div className="adopt-title-container">
-        <h1 className="adopt-title blank-banner">INTERNSHIP OPPORTUNITIES</h1>
-      </div>
-      <section className="info-page-content intern-page">
+      <Title classOption="blank-banner" title="internship opportunities" />
+      <section className="info-page-content filler-page">
         <p className="info-page-intro intern-page">
           Interning is a great opportunity to gain experience in the field and
           further your education. At this time we have nothing available, but

@@ -72,6 +72,7 @@
   width: 260px;
   transition: 0.1s ease-in;
   border-radius: 30px;
+  object-fit: cover;
 }
 
 .rescue-page-side-image-container {
@@ -138,6 +139,7 @@
   border-radius: 30px;
   box-shadow: var(--shadow);
   user-select: none;
+  object-fit: cover;
 }
 
 .middle-column {
@@ -208,11 +210,12 @@
   color: var(--secondary);
   background-color: var(--primary);
   font-size: 22px;
-  border: solid 2px var(--border);
+  /* border: solid 2px var(--border); */
   border-radius: 60px;
   padding-top: 5px;
   transition: 0.5s ease-out;
   /* text-shadow: 0px 0px 2px black; */
+  box-shadow: inset 0px -1px 8px rgba(0, 0, 0, 0.4);
 }
 
 .rescue-page-btn-adopt.name-long {

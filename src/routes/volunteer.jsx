@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { VolunteerItems } from "../components/dropdownItems";
+import Title from "../components/Title";
 import "./volunteer.css";
 
 export const Route = createFileRoute("/volunteer")({
@@ -10,9 +11,7 @@ export const Route = createFileRoute("/volunteer")({
 function Volunteer() {
   return (
     <div className="adopt-container main">
-      <div className="adopt-title-container">
-        <h1 className="adopt-title volunteer-main">VOLUNTEER</h1>
-      </div>
+      <Title classOption="volunteer-main" title="volunteer" />
       <nav className="species-links">
         {VolunteerItems.map((category, index) => (
           <Link to={category.path} className="species-link" key={index}>

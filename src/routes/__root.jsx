@@ -14,8 +14,6 @@ export const Route = createRootRoute({
 function RootComponent() {
   const clickedHook = useState(false);
   const speciesListHook = useState([]);
-  console.log(speciesListHook);
-  // console.log(clickedHook);
   return (
     <>
       <ClickedContext value={clickedHook}>

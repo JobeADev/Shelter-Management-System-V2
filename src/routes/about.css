@@ -1,0 +1,17 @@
+.info-page-intro.about:first-of-type {
+  padding-bottom: 0px;
+}
+
+.info-page-intro.about:last-of-type {
+  padding-bottom: 22rem;
+}
+
+.intern-page-link.about {
+  background-color: var(--secondary);
+}
+
+@media screen and (max-width: 1200px) {
+  .info-page-intro.about:last-of-type {
+    padding-bottom: 17.5rem;
+  }
+}

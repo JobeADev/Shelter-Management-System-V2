@@ -13,3 +13,48 @@
   background-image: url(../imgs/SMS-none.png);
   background-size: cover;
 }
+
+.care-page-link {
+  color: var(--primary);
+}
+
+.care-page-link:hover {
+  color: var(--hover);
+  text-decoration: underline;
+}
+
+.info-page-content.filler-page.surrender-page {
+  padding-top: 18px;
+  justify-content: space-between;
+  height: 44.5rem;
+}
+
+.info-page-intro.care-page-intro-first {
+  padding-bottom: 20px;
+}
+
+.info-page-intro.care-page-intro-last {
+  padding-top: 40px;
+  padding-bottom: 0px;
+  font-weight: 700;
+}
+
+.info-page-intro.care-page {
+  height: 100%;
+  padding-top: 105px;
+  padding-bottom: 40px;
+}
+
+.info-page-list.care-page {
+  padding-bottom: 0px;
+}
+
+.info-page-item.care-page {
+  font-size: 19px;
+  margin-top: 3px;
+  padding-inline: 7px;
+}
+
+.info-page-item.care-page::marker {
+  font-size: 11px;
+}

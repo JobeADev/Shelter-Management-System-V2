@@ -4,9 +4,12 @@
   --name: rgb(241, 157, 0);
   --hover: rgb(183, 53, 183);
   --border: black;
+  --title-bg: rgb(255, 255, 255, 0.6);
   --inline-color: rgb(141, 102, 141);
-  --disabled: rgba(169, 169, 169, 0.842);
+  --even-line: rgb(233, 233, 243);
+  --disabled: rgb(150, 150, 150);
   --btn-press: rgb(143, 35, 143);
+  --spinner: rgb(95, 4, 95);
   --font: "TabelSans";
   --text-shadow: 1px 1px 5px var(--border);
   --shadow: 0px 1px 7px 0px var(--border);

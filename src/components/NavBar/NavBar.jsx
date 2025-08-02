@@ -84,7 +84,9 @@ export default function NavBar() {
   }
 
   return (
-    <div className={`nav-bar-container ${showNavbar ? "show" : "hide"}`}>
+    <div
+      className={`nav-bar-container ${showNavbar ? "show" : "hide"} ${makeOpac && !clicked ? "width-change" : ""}`}
+    >
       <nav className={makeOpac && !clicked ? "nav-bar make-opac" : "nav-bar"}>
         <div className="nav-logo">
           <Link to="/" onClick={() => [setSpeciesList([]), setClicked(false)]}>
@@ -112,6 +114,12 @@ export default function NavBar() {
               onClick={[closeMobileMenu, handleLinkClick]}
             >
               ADOPT
+              {/* {" "}
+              {!adoptDD ? (
+                <i className="fa-solid fa-caret-down"></i>
+              ) : (
+                <i className="fa-solid fa-caret-up"></i>
+              )} */}
             </Link>
             {adoptDD && <Dropdown props={AdoptItems} />}
           </li>
@@ -126,6 +134,12 @@ export default function NavBar() {
               onClick={[closeMobileMenu, handleLinkClick]}
             >
               VOLUNTEER
+              {/* {" "}
+              {!volunteerDD ? (
+                <i className="fa-solid fa-caret-down"></i>
+              ) : (
+                <i className="fa-solid fa-caret-up"></i>
+              )} */}
             </Link>
             {volunteerDD && <Dropdown props={VolunteerItems} />}
           </li>
@@ -140,16 +154,22 @@ export default function NavBar() {
               onClick={[closeMobileMenu, handleLinkClick]}
             >
               RESOURCES
+              {/* {" "}
+              {!resourcesDD ? (
+                <i className="fa-solid fa-caret-down"></i>
+              ) : (
+                <i className="fa-solid fa-caret-up"></i>
+              )} */}
             </Link>
             {resourcesDD && <Dropdown props={ResourcesItems} />}
           </li>
           <li className="nav-option">
             <Link
-              to="/contact"
+              to="/events"
               className="nav-link"
               onClick={[closeMobileMenu, handleLinkClick]}
             >
-              CONTACT US
+              EVENTS
             </Link>
           </li>
           <li className="nav-option">
@@ -163,9 +183,9 @@ export default function NavBar() {
           </li>
           <li className="donate-btn">
             <Link
-              to="/donate"
+              // to="/donate"
               className="donate-btn-link"
-              onClick={[closeMobileMenu, handleLinkClick]}
+              // onClick={[closeMobileMenu, handleLinkClick]}
             >
               DONATE
             </Link>{" "}

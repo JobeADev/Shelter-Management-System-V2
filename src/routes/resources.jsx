@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { ResourcesItems } from "../components/dropdownItems";
+import Title from "../components/Title";
 import "./resources.css";
 
 export const Route = createFileRoute("/resources")({
@@ -10,9 +11,7 @@ export const Route = createFileRoute("/resources")({
 function Resources() {
   return (
     <div className="adopt-container main">
-      <div className="adopt-title-container">
-        <h1 className="adopt-title resources-main">RESOURCES</h1>
-      </div>
+      <Title classOption="resources-main" title="resources" />
       <nav className="species-links">
         {ResourcesItems.map((category, index) => (
           <Link to={category.path} className="species-link" key={index}>

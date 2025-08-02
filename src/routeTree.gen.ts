@@ -18,6 +18,7 @@ import { Route as ResourcesSurrenderRouteImport } from './routes/resourcesSurren
 import { Route as ResourcesCareRouteImport } from './routes/resourcesCare'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as LocationInfoRouteImport } from './routes/locationInfo'
+import { Route as EventsRouteImport } from './routes/events'
 import { Route as DonateRouteImport } from './routes/donate'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AdoptOtherRouteImport } from './routes/adoptOther'
@@ -65,6 +66,11 @@ const ResourcesRoute = ResourcesRouteImport.update({
 const LocationInfoRoute = LocationInfoRouteImport.update({
   id: '/locationInfo',
   path: '/locationInfo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DonateRoute = DonateRouteImport.update({
@@ -130,6 +136,7 @@ export interface FileRoutesByFullPath {
   '/adoptOther': typeof AdoptOtherRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
+  '/events': typeof EventsRoute
   '/locationInfo': typeof LocationInfoRoute
   '/resources': typeof ResourcesRoute
   '/resourcesCare': typeof ResourcesCareRoute
@@ -149,6 +156,7 @@ export interface FileRoutesByTo {
   '/adoptOther': typeof AdoptOtherRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
+  '/events': typeof EventsRoute
   '/locationInfo': typeof LocationInfoRoute
   '/resources': typeof ResourcesRoute
   '/resourcesCare': typeof ResourcesCareRoute
@@ -169,6 +177,7 @@ export interface FileRoutesById {
   '/adoptOther': typeof AdoptOtherRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
+  '/events': typeof EventsRoute
   '/locationInfo': typeof LocationInfoRoute
   '/resources': typeof ResourcesRoute
   '/resourcesCare': typeof ResourcesCareRoute
@@ -190,6 +199,7 @@ export interface FileRouteTypes {
     | '/adoptOther'
     | '/contact'
     | '/donate'
+    | '/events'
     | '/locationInfo'
     | '/resources'
     | '/resourcesCare'
@@ -209,6 +219,7 @@ export interface FileRouteTypes {
     | '/adoptOther'
     | '/contact'
     | '/donate'
+    | '/events'
     | '/locationInfo'
     | '/resources'
     | '/resourcesCare'
@@ -228,6 +239,7 @@ export interface FileRouteTypes {
     | '/adoptOther'
     | '/contact'
     | '/donate'
+    | '/events'
     | '/locationInfo'
     | '/resources'
     | '/resourcesCare'
@@ -248,6 +260,7 @@ export interface RootRouteChildren {
   AdoptOtherRoute: typeof AdoptOtherRoute
   ContactRoute: typeof ContactRoute
   DonateRoute: typeof DonateRoute
+  EventsRoute: typeof EventsRoute
   LocationInfoRoute: typeof LocationInfoRoute
   ResourcesRoute: typeof ResourcesRoute
   ResourcesCareRoute: typeof ResourcesCareRoute
@@ -307,6 +320,13 @@ declare module '@tanstack/react-router' {
       path: '/locationInfo'
       fullPath: '/locationInfo'
       preLoaderRoute: typeof LocationInfoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/donate': {
@@ -392,6 +412,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdoptOtherRoute: AdoptOtherRoute,
   ContactRoute: ContactRoute,
   DonateRoute: DonateRoute,
+  EventsRoute: EventsRoute,
   LocationInfoRoute: LocationInfoRoute,
   ResourcesRoute: ResourcesRoute,
   ResourcesCareRoute: ResourcesCareRoute,

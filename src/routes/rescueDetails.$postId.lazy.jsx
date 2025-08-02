@@ -7,6 +7,7 @@ import RescuePage from "../components/RescuePage/RescuePage";
 import Loader from "../components/Loader";
 // import { useState, useEffect } from "react";
 // import { AllMockAnimals } from "../components/mockRescues";
+// import MockLoader from "../components/MockLoader/MockLoader";
 import "./rescueDetails.css";
 
 export const Route = createLazyFileRoute("/rescueDetails/$postId")({
@@ -22,6 +23,10 @@ function RescueDetails() {
     staleTime: 600000,
   });
 
+  if (isLoading) {
+    return <Loader />;
+  }
+
   // const handlePopstate = () => {
   //   router.navigate({ to: "/adoptCats" });
   // };
@@ -34,11 +39,8 @@ function RescueDetails() {
   //   };
   // }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
-
   // const [data, setData] = useState({});
+  // const [isLoading, setIsLoading] = useState(true);
   // function getMockRescue() {
   //   const rescue = AllMockAnimals.find((animal) => animal.petId === +postId);
   //   setData(rescue);
@@ -46,6 +48,9 @@ function RescueDetails() {
   // useEffect(() => {
   //   getMockRescue();
   // }, [postId]);
+  // if (isLoading) {
+  //   return <MockLoader setIsLoading={setIsLoading} />;
+  // }
 
   return (
     <div className="rescue-details-page-container">

@@ -2,7 +2,6 @@
 .adopt-container,
 .adopt-title-container,
 .species-links,
-.loader-container,
 .info-page-content,
 .info-page-item-contents {
   display: flex;
@@ -13,17 +12,6 @@
   display: flex !important;
 } */
 
-.loader-container {
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-}
-
-.loader {
-  font-size: 40px;
-}
-
 .adopt-container {
   flex-direction: column;
   text-align: center;
@@ -33,19 +21,27 @@
 }
 
 .adopt-title {
-  padding-top: 100px;
-  margin-bottom: 0px;
-  margin-top: 0px;
+  padding-top: 97px;
+  padding-bottom: 3px;
+  margin: 0;
   width: 100%;
   font-family: var(--font);
-  color: var(--primary);
+  color: var(--btn-press);
   font-size: 53px;
   /* border-left: solid 3px var(--primary);
   border-right: solid 3px var(--primary); */
   border-bottom: solid 3px var(--primary);
   box-shadow: var(--one-side-shadow);
-  text-shadow: var(--text-shadow);
+  text-shadow: 0px 0px 1px var(--btn-press);
   z-index: 1;
+}
+
+.adopt-title-text {
+  padding: 14px 9px 2px 9px;
+  background-color: var(--title-bg);
+  border-radius: 10px;
+  user-select: none;
+  /* opacity: 0.5; */
 }
 
 .adopt-title.blank-banner {
@@ -95,12 +91,15 @@
 
 .rescue-list {
   display: grid;
+  justify-content: space-evenly;
   grid-template-columns: repeat(5, auto);
-  height: 100%;
+  row-gap: 50px;
+  /* height: 100%; */
   align-items: center;
   /* border-left: dotted 3px var(--primary);
   border-right: dotted 3px var(--primary); */
   padding-top: 105px;
+  padding-bottom: 40px;
 }
 
 .adopt-title-container,
@@ -169,11 +168,19 @@
   background-color: var(--primary);
   border-radius: 25px; */
   text-shadow: var(--text-shadow);
+  user-select: none;
 }
 
 .info-page-content {
   flex-direction: column;
   align-items: center;
+}
+
+.info-page-content.filler-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 49rem;
 }
 
 .info-page-intro {
@@ -221,7 +228,7 @@
 }
 
 .info-page-item.even {
-  background-color: rgb(233, 233, 243);
+  background-color: var(--even-line);
   border-radius: 3px;
 }
 
@@ -250,6 +257,10 @@
   .species-links {
     display: grid;
     grid-template-columns: repeat(2, auto);
+  }
+
+  .species-links.main {
+    padding-bottom: 70px;
   }
 }
 
@@ -360,8 +371,9 @@
 
   .rescue-list {
     grid-template-columns: repeat(2, auto);
+    row-gap: 40px;
     padding-top: 40px;
-    /* column-gap: 5px; */
+    padding-bottom: 30px;
   }
 
   .adopt-title.adopt-main {
