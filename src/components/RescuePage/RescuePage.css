@@ -185,6 +185,12 @@
 
 .rescue-page-detail-description-container {
   max-width: 450px;
+  flex-direction: column;
+}
+
+.rescue-page-detail-description-container .fa-caret-up,
+.rescue-page-detail-description-container .fa-caret-down {
+  font-size: 20px;
 }
 
 .rescue-page-detail-description {
@@ -193,6 +199,7 @@
   text-align: center;
   align-self: center;
   width: 100%;
+  user-select: none;
 }
 
 .rescue-page-detail-description.description-long:hover {
@@ -201,7 +208,7 @@
 
 .rescue-page-none {
   /* background-image: url(SMS-none.png); */
-  background-image: url(../../../public/SMS-none.png);
+  background-image: url(../../../SMS-none.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -229,11 +236,11 @@
 }
 
 .rescue-page-btn-back {
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 .rescue-page-btn-adopt {
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 .rescue-page-btn-adopt.name-long {
@@ -263,6 +270,16 @@
   background-color: var(--btn-press);
 }
 
+@media screen and (max-width: 1750px) {
+  .rescue-page-btn-back {
+    margin-right: 150px;
+  }
+
+  .rescue-page-btn-adopt {
+    margin-left: 150px;
+  }
+}
+
 @media screen and (max-width: 1350px) {
   .adopt-container.rescue-page {
     padding-inline: 120px;
@@ -273,7 +290,11 @@
   }
 
   .rescue-page-images.description-clicked {
-    height: 1020px;
+    height: 930px;
+  }
+
+  .rescue-page-images.description-clicked-long {
+    height: 1060px;
   }
 
   .rescue-page-side-images.left {
@@ -323,7 +344,8 @@
   }
 
   .middle-column {
-    padding-top: 0px;
+    justify-content: start;
+    padding-top: 20px;
   }
 
   .rescue-page-info {
@@ -363,7 +385,11 @@
   }
 
   .rescue-page-images.description-clicked {
-    height: 970px;
+    height: 910px;
+  }
+
+  .rescue-page-images.description-clicked-long {
+    height: 1000px;
   }
 
   .rescue-page-hero {
@@ -411,7 +437,7 @@
   }
 
   .rescue-page-images {
-    height: 760px;
+    height: 780px;
   }
 
   .rescue-page-side-images {
@@ -478,7 +504,11 @@
   }
 
   .rescue-page-images.description-clicked {
-    height: 1550px;
+    height: 1480px;
+  }
+
+  .rescue-page-images.description-clicked-long {
+    height: 1560px;
   }
 
   .rescue-page-images.no-images {

@@ -34,6 +34,8 @@ function Form(props) {
   const [email, setEmail] = useState("");
   const [confirmEmail, setConfirmEmail] = useState("");
   const [infoSection, setInfoSection] = useState("");
+  const [ageVerification, setAgeVerification] = useState("Yes");
+  const [familyVerification, setFamilyVerification] = useState("Yes");
 
   // const mobileCheck = () => {
   //   if (window.innerWidth <= 430) {
@@ -67,8 +69,14 @@ function Form(props) {
       setEmail("");
       setConfirmEmail("");
       setInfoSection("");
+      setAgeVerification("Yes");
+      if (props.isVolunteerPage) {
+        setFamilyVerification("Yes");
+      }
     }
   };
+
+  console.log(ageVerification);
 
   return (
     <div className="form-page-container">
@@ -141,26 +149,79 @@ function Form(props) {
               hasError={error}
             />
           </span>
-          {/* {window.innerWidth > 430 ? (
-            <ContactInput
-              type="text"
-              name="infoSection"
+          {props.formTheme != "" ? (
+            <textarea
+              className="form-input"
               value={infoSection}
               placeholder={props.formTheme}
-              setter={setInfoSection}
+              name="message"
+              rows={2}
+              onChange={(e) => {
+                setInfoSection(e.target.value);
+              }}
+              required={props.isVolunteerPage || props.isSurrenderPage}
             />
-          ) : ( */}
-          <textarea
-            className="form-input"
-            value={infoSection}
-            placeholder={props.formTheme}
-            name="message"
-            rows={2}
-            onChange={(e) => {
-              setInfoSection(e.target.value);
-            }}
-          />
-          {/* )} */}
+          ) : null}
+          <span className="form-radio-inputs">
+            <div>
+              <p className="form-radio-title">Are You Over 18?</p>
+              <label className="form-radio-label" htmlFor="over18YesResponse">
+                <input
+                  className="form-radio-input"
+                  type="radio"
+                  id="over18YesResponse"
+                  name="over18YesResponse"
+                  value="Yes"
+                  checked={ageVerification === "Yes"}
+                  onChange={(e) => setAgeVerification(e.target.value)}
+                />
+                 <span className="form-radio-label-text">Yes</span>
+              </label>
+              <label className="form-radio-input" htmlFor="over18NoResponse">
+                <input
+                  className="form-radio-input"
+                  type="radio"
+                  id="over18NoResponse"
+                  name="over18YesResponse"
+                  value="No"
+                  checked={ageVerification === "No"}
+                  onChange={(e) => setAgeVerification(e.target.value)}
+                />
+                <span className="form-radio-label-text">No</span>
+              </label>
+            </div>
+            {props.isVolunteerPage ? (
+              <div>
+                <p className="form-radio-title">
+                  Do You Plan To Bring Friends/Family
+                </p>
+                <label className="form-radio-label" htmlFor="familyYesResponse">
+                  <input
+                    className="form-radio-input"
+                    type="radio"
+                    id="familyYesResponse"
+                    name="familyYesResponse"
+                    value="Yes"
+                    checked={familyVerification === "Yes"}
+                    onChange={(e) => setFamilyVerification(e.target.value)}
+                  />
+                   <span className="form-radio-label-text">Yes</span>
+                </label>
+                <label className="form-radio-input" htmlFor="familyNoResponse">
+                  <input
+                    className="form-radio-input"
+                    type="radio"
+                    id="familyNoResponse"
+                    name="familyNoResponse"
+                    value="No"
+                    checked={familyVerification === "No"}
+                    onChange={(e) => setFamilyVerification(e.target.value)}
+                  />
+                  <span className="form-radio-label-text">No</span>
+                </label>
+              </div>
+            ) : null}
+          </span>
           <button className="form-btn" type="submit">
             Submit
           </button>

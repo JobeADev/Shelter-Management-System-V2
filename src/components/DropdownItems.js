@@ -24,14 +24,19 @@ export const AdoptItems = [
 
 export const VolunteerItems = [
   {
-    title: "INTERNSHIPS",
-    path: "/volunteerInternships",
-    class: "internships",
+    title: "VOLUNTEER",
+    path: "/getInvolvedVolunteer",
+    class: "volunteer",
     group: "volunteer",
   },
   {
+    title: "INTERNSHIPS",
+    path: "/getInvolvedInternships",
+    class: "internships",
+  },
+  {
     title: "FOSTER PARENTING",
-    path: "/volunteerFoster",
+    path: "/getInvolvedFoster",
     class: "foster",
   },
 ];

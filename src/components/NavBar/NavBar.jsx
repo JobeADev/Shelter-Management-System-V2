@@ -125,8 +125,8 @@ export default function NavBar() {
               setVolunteerDD(false);
             }}
           >
-            <Link to="/volunteer" className="nav-link">
-              VOLUNTEER
+            <Link to="/getInvolved" className="nav-link">
+              GET INVOLVED
               {/* {" "}
               {!volunteerDD ? (
                 <i className="fa-solid fa-caret-down"></i>

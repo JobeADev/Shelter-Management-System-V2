@@ -2,12 +2,16 @@ import { ageInMonthsConverter, ageInYearsConverter } from "../ageConverters";
 
 const RescuePageInfo = (rescue) => {
   const handleDescriptionClicked = () => {
-    if (rescue.description.length >= 225 && rescue.descriptionClicked === "") {
-      rescue.setDescriptionClicked("description-clicked");
+    if (rescue.description.length >= 450 && rescue.descriptionClicked === "") {
+      rescue.setDescriptionClicked("description-clicked-long");
     } else if (
       rescue.description.length >= 225 &&
-      rescue.descriptionClicked === "description-clicked"
+      rescue.descriptionClicked === ""
     ) {
+      rescue.setDescriptionClicked("description-clicked");
+    } else if (rescue.descriptionClicked === "description-clicked-long") {
+      rescue.setDescriptionClicked("");
+    } else if (rescue.descriptionClicked === "description-clicked") {
       rescue.setDescriptionClicked("");
     }
   };
@@ -45,13 +49,19 @@ const RescuePageInfo = (rescue) => {
               {rescue.description}
             </p>
           ) : rescue.descriptionClicked ? (
-            <p className="rescue-page-detail-description description-long">
-              {rescue.description}
-            </p>
+            <>
+              <p className="rescue-page-detail-description description-long">
+                {rescue.description}
+              </p>
+              <i className="fa-solid fa-caret-up"></i>
+            </>
           ) : (
-            <p className="rescue-page-detail-description description-long">
-              {rescue.description.slice(0, 222)}...
-            </p>
+            <>
+              <p className="rescue-page-detail-description description-long">
+                {rescue.description.slice(0, 222)}...
+              </p>
+              <i className="fa-solid fa-caret-down"></i>
+            </>
           )
         ) : null}
       </div>

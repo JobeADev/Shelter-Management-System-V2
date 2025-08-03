@@ -1,6 +1,4 @@
-import { useContext } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ClickedContext } from "../components/contexts";
 import Form from "../components/Form/Form";
 import Title from "../components/Title";
 
@@ -9,12 +7,8 @@ export const Route = createFileRoute("/resourcesSurrender")({
 });
 
 function Surrender() {
-  const [clicked] = useContext(ClickedContext);
-
   return (
-    <div
-      className={clicked ? "adopt-container clicked-noShow" : "adopt-container"}
-    >
+    <div className="adopt-container">
       <Title classOption="blank-banner" title="surrendering your pet" />
       <section className="info-page-content filler-page surrender-page">
         <p className="info-page-intro surrender-page">
@@ -22,7 +16,10 @@ function Surrender() {
           completely sure you're ready to surrender your pet, please fill out
           the form below and we'll be in touch soon!
         </p>
-        <Form formTheme="Please Provide Species and Age of Your Pet (e.g. Dog, 10 y.o.)" />
+        <Form
+          formTheme="Please Provide Species and Age of Your Pet (e.g. Dog, 10 y.o.)"
+          isSurrenderPage={true}
+        />
       </section>
     </div>
   );

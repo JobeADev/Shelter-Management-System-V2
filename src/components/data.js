@@ -35,6 +35,25 @@ export const ServicesList = [
   "Microchipping",
 ];
 
+export const OpportunitiesList = [
+  {
+    title: "General Volunteer",
+    description:
+      "Work with staff to complete tasks such as training, exercising, grooming, and other enriching activities.",
+  },
+  {
+    title: "Corporate Service Day",
+    description:
+      "Very generous corporate teams help keep our shelter clean and organized while socializing with our animals",
+  },
+];
+
+export const OtherOpportunitiesList = [
+  "Baking",
+  "Homemade toys",
+  "Funding for appreciation parties",
+];
+
 export const FosterBenefits = [
   "Save the life not only of the animal being fostered, but free up space at the shelter for another animal in need",
   "Have the rewarding experience of helping an animal on their journey to finding a forever home",

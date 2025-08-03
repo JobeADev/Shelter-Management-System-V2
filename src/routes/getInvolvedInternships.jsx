@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import Title from "../components/Title";
+import "./getInvolved.css";
 
-export const Route = createFileRoute("/volunteerInternships")({
+export const Route = createFileRoute("/getInvolvedInternships")({
   component: Internships,
 });
 
@@ -16,22 +17,9 @@ function Internships() {
           further your education. At this time we have nothing available, but
           check back often for more opportunities!
         </p>
-        <Link className="intern-page-link" to="/volunteer">
-          BACK TO VOLUNTEER
+        <Link className="intern-page-link" to="/getInvolved">
+          BACK TO GET INVOLVED
         </Link>
-        {/* <h2 className="info-page-section-title">What You'll Need</h2> */}
-        {/* <ul className="info-page-list">
-          {NeedsList.map((i, index) => (
-            <li
-              className={
-                index % 2 === 1 ? "info-page-item" : "info-page-item even"
-              }
-              key={index}
-            >
-              {i}
-            </li>
-          ))}
-        </ul> */}
       </section>
     </div>
   );

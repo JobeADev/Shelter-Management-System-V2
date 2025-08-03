@@ -1,0 +1,67 @@
+.adopt-title.volunteer-main {
+  /* background-image: url(../../SMS-none.png);
+  background-size: cover;
+  background-position-y: 40%; */
+  background-color: #c8bfe7;
+}
+
+.category-image.volunteer {
+  background-image: url(../../SMS-none.png);
+  background-size: cover;
+}
+.category-image.internships {
+  background-image: url(../../SMS-none.png);
+  background-size: cover;
+}
+.category-image.foster {
+  background-image: url(../../SMS-none.png);
+  background-size: cover;
+}
+
+.info-page-content.filler-page.volunteer-page {
+  padding-top: 18px;
+  justify-content: space-between;
+  height: 52rem;
+}
+
+/* .info-page-list.volunteer-page {
+} */
+
+.volunteer-page-item {
+  font-size: 19px;
+  /* text-align: left; */
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.volunteer-page-item:first-of-type {
+  margin-top: 10px;
+}
+
+.volunteer-page-item-description {
+  font-size: 17.5px;
+  /* text-align: left; */
+  margin-top: 4px;
+  /* background-color: var(--even-line); */
+}
+
+.info-page-intro.foster-page:last-of-type {
+  padding-top: 55px;
+  padding-bottom: 0px;
+}
+
+/* .info-page-content.intern-page {
+
+} */
+
+.intern-page-link {
+  font-size: 1.3em;
+  font-weight: 900;
+  color: var(--primary);
+  transition: color 0.4s ease-out;
+  padding-bottom: 1rem;
+}
+
+.intern-page-link:hover {
+  color: var(--hover);
+}

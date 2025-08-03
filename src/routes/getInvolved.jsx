@@ -2,17 +2,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { VolunteerItems } from "../components/dropdownItems";
 import Title from "../components/Title";
-import "./volunteer.css";
+import "./getInvolved.css";
 
-export const Route = createFileRoute("/volunteer")({
-  component: Volunteer,
+export const Route = createFileRoute("/getInvolved")({
+  component: GetInvolved,
 });
 
-function Volunteer() {
+function GetInvolved() {
   return (
     <div className="adopt-container main">
-      <Title classOption="volunteer-main" title="volunteer" />
-      <nav className="species-links">
+      <Title classOption="volunteer-main" title="get involved" />
+      <nav className="species-links main">
         {VolunteerItems.map((category, index) => (
           <Link to={category.path} className="species-link" key={index}>
             <div className={`category-image ${category.class}`}>

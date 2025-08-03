@@ -4,8 +4,9 @@ import { ClickedContext } from "../components/contexts";
 import { FosterBenefits } from "../components/data";
 import Form from "../components/Form/Form";
 import Title from "../components/Title";
+import "./getInvolved.css";
 
-export const Route = createFileRoute("/volunteerFoster")({
+export const Route = createFileRoute("/getInvolvedFoster")({
   component: Foster,
 });
 
@@ -45,7 +46,7 @@ function Foster() {
           If you're ready to give fostering a try, please fill out the form
           below and we'll be in touch soon!
         </p>
-        <Form formTheme="Name of the Animal/s You Were Interested in Fostering" />
+        <Form formTheme="Name of the Animal/s You Were Interested in Fostering  (If none, you may leave this blank)" />
       </section>
     </div>
   );

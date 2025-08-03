@@ -49,37 +49,37 @@
 }
 
 .adopt-title.adopt-main {
-  background-image: url(../../public/adopt-banner.jpg);
+  background-image: url(../../adopt-banner.jpg);
   background-size: cover;
   background-position-y: 30%;
 }
 
 /* .adopt-title.adopt-main {
-  background-image: url(../../public/banner.jpg);
+  background-image: url(../../banner.jpg);
   background-size: cover;
   background-position-y: 50%;
 } */
 
 .adopt-title.cats {
-  background-image: url(../../public/cats-image.jpg);
+  background-image: url(../../cats-image.jpg);
   background-size: cover;
   background-position: center;
 }
 
 .adopt-title.dogs {
-  background-image: url(../../public/dogs-image.jpg);
+  background-image: url(../../dogs-image.jpg);
   background-size: cover;
   background-position-y: 49%;
 }
 
 .adopt-title.other {
-  background-image: url(../../public/others-image.jpg);
+  background-image: url(../../others-image.jpg);
   background-size: cover;
   background-position-y: 24%;
 }
 
 .adopt-title.info {
-  background-image: url(../../public/info-image.jpg);
+  background-image: url(../../info-image.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -147,21 +147,21 @@
 }
 
 .category-image.cats {
-  background-image: url(../../public/cats-image.jpg);
+  background-image: url(../../cats-image.jpg);
   background-size: cover;
 }
 .category-image.dogs {
-  background-image: url(../../public/dogs-image.jpg);
+  background-image: url(../../dogs-image.jpg);
   background-position-y: 92%;
   background-size: cover;
 }
 .category-image.other {
-  background-image: url(../../public/others-image.jpg);
+  background-image: url(../../others-image.jpg);
   background-position-x: 65%;
   background-size: cover;
 }
 .category-image.info {
-  background-image: url(../../public/info-image.jpg);
+  background-image: url(../../info-image.jpg);
   background-position-x: 20%;
   background-size: cover;
 }

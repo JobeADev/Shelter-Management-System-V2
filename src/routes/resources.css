@@ -1,16 +1,16 @@
 .adopt-title.resources-main {
-  /* background-image: url(../../public/SMS-none.png);
+  /* background-image: url(../../SMS-none.png);
   background-size: cover;
   background-position-y: 40%; */
   background-color: #c8bfe7;
 }
 
 .category-image.pet-care {
-  background-image: url(../../public/SMS-none.png);
+  background-image: url(../../SMS-none.png);
   background-size: cover;
 }
 .category-image.surrendering {
-  background-image: url(../../public/SMS-none.png);
+  background-image: url(../../SMS-none.png);
   background-size: cover;
 }
 
@@ -23,10 +23,16 @@
   text-decoration: underline;
 }
 
-.info-page-content.filler-page.surrender-page {
+/* .info-page-content.filler-page.surrender-page {
   padding-top: 18px;
   justify-content: space-between;
   height: 44.5rem;
+} */
+
+.info-page-content.filler-page.surrender-page {
+  padding-top: 18px;
+  justify-content: space-between;
+  height: 50rem;
 }
 
 .info-page-intro.care-page-intro-first {

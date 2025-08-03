@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import "./donate.css";
 
 export const Route = createFileRoute("/donate")({
   component: Donate,

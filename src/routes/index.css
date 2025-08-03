@@ -29,7 +29,7 @@ body {
 .cat-image {
   position: relative;
   height: 700px;
-  background-image: url(../../public/home-banner.jpg);
+  background-image: url(../../home-banner.jpg);
   background-position-y: 71.8%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -70,12 +70,12 @@ body {
 
 .pattern-spikes-first::after {
   bottom: 0;
-  mask-image: url(../../public/triangle-bottom.svg);
+  mask-image: url(../../triangle-bottom.svg);
 }
 
 .pattern-spikes-last::before {
   top: 0;
-  mask-image: url(../../public/triangle-top.svg);
+  mask-image: url(../../triangle-top.svg);
   /* transform: rotate(0.5turn); */
 }
 
