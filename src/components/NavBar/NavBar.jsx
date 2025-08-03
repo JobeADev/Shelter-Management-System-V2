@@ -19,10 +19,10 @@ export default function NavBar() {
     if (clicked) {
       setShowNavbar(true);
     } else if (window.scrollY > lastScrollY) {
-      // Scrolling down and past a certain threshold
+      // Scrolling down
       setShowNavbar(false);
     } else {
-      // Scrolling up or near the top
+      // Scrolling up
       setShowNavbar(true);
     }
     setLastScrollY(window.scrollY);
@@ -50,26 +50,13 @@ export default function NavBar() {
     };
   }, [lastScrollY]); // Re-run effect if lastScrollY changes
 
-  // const handleClick = () => {
-  //   setClicked(!clicked);
-  // };
-  const handleLinkClick = () => {
-    if (window.innerWidth <= 1200) {
-      setClicked(!clicked);
-    }
+  const closeMobileMenu = () => {
+    setClicked(false);
   };
-  const closeMobileMenu = () => setClicked(false);
+
   function onMouseEnterDD(name) {
     if (window.innerWidth <= 1200) {
-      if (name === "adopt") {
-        setAdoptDD(false);
-      }
-      if (name === "volunteer") {
-        setVolunteerDD(false);
-      }
-      if (name === "resources") {
-        setResourcesDD(false);
-      }
+      return null;
     } else {
       if (name === "adopt") {
         setAdoptDD(true);
@@ -88,8 +75,14 @@ export default function NavBar() {
       className={`nav-bar-container ${showNavbar ? "show" : "hide"} ${makeOpac && !clicked ? "width-change" : ""}`}
     >
       <nav className={makeOpac && !clicked ? "nav-bar make-opac" : "nav-bar"}>
-        <div className="nav-logo">
-          <Link to="/" onClick={() => [setSpeciesList([]), setClicked(false)]}>
+        <div
+          className="nav-logo"
+          onClick={() => {
+            setSpeciesList([]);
+            closeMobileMenu();
+          }}
+        >
+          <Link to="/">
             <i className="fa-solid fa-paw fa-3x" />
           </Link>
           {/* <Link to="/">
@@ -107,12 +100,12 @@ export default function NavBar() {
             className="nav-option"
             onMouseEnter={() => onMouseEnterDD("adopt")}
             onMouseLeave={() => setAdoptDD(false)}
+            onClick={() => {
+              closeMobileMenu();
+              setAdoptDD(false);
+            }}
           >
-            <Link
-              to="/adopt"
-              className="nav-link"
-              onClick={[closeMobileMenu, handleLinkClick]}
-            >
+            <Link to="/adopt" className="nav-link">
               ADOPT
               {/* {" "}
               {!adoptDD ? (
@@ -127,12 +120,12 @@ export default function NavBar() {
             className="nav-option"
             onMouseEnter={() => onMouseEnterDD("volunteer")}
             onMouseLeave={() => setVolunteerDD(false)}
+            onClick={() => {
+              closeMobileMenu();
+              setVolunteerDD(false);
+            }}
           >
-            <Link
-              to="/volunteer"
-              className="nav-link"
-              onClick={[closeMobileMenu, handleLinkClick]}
-            >
+            <Link to="/volunteer" className="nav-link">
               VOLUNTEER
               {/* {" "}
               {!volunteerDD ? (
@@ -147,12 +140,12 @@ export default function NavBar() {
             className="nav-option"
             onMouseEnter={() => onMouseEnterDD("resources")}
             onMouseLeave={() => setResourcesDD(false)}
+            onClick={() => {
+              closeMobileMenu();
+              setResourcesDD(false);
+            }}
           >
-            <Link
-              to="/resources"
-              className="nav-link"
-              onClick={[closeMobileMenu, handleLinkClick]}
-            >
+            <Link to="/resources" className="nav-link">
               RESOURCES
               {/* {" "}
               {!resourcesDD ? (
@@ -163,32 +156,23 @@ export default function NavBar() {
             </Link>
             {resourcesDD && <Dropdown props={ResourcesItems} />}
           </li>
-          <li className="nav-option">
-            <Link
-              to="/events"
-              className="nav-link"
-              onClick={[closeMobileMenu, handleLinkClick]}
-            >
+          <li className="nav-option" onClick={closeMobileMenu}>
+            <Link to="/events" className="nav-link">
               EVENTS
             </Link>
           </li>
-          <li className="nav-option">
-            <Link
-              to="/about"
-              className="nav-link"
-              onClick={[closeMobileMenu, handleLinkClick]}
-            >
+          <li className="nav-option" onClick={closeMobileMenu}>
+            <Link to="/about" className="nav-link">
               ABOUT US
             </Link>
           </li>
-          <li className="donate-btn">
+          <li className="donate-btn" onClick={closeMobileMenu}>
             <Link
               // to="/donate"
               className="donate-btn-link"
-              // onClick={[closeMobileMenu, handleLinkClick]}
             >
               DONATE
-            </Link>{" "}
+            </Link>
           </li>
         </ul>
       </nav>

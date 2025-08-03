@@ -12,6 +12,7 @@ function RescuePage(rescue) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [leftClicked, setLeftClicked] = useState(false);
   const [rightClicked, setRightClicked] = useState(false);
+  const [descriptionClicked, setDescriptionClicked] = useState("");
   const [SpeciesList] = useContext(SpeciesListContext);
   const [backPath, setBackPath] = useState("");
   const index = SpeciesList.findIndex(
@@ -78,8 +79,8 @@ function RescuePage(rescue) {
       <div
         className={
           rescue.images != null || rescue.images != undefined
-            ? "rescue-page-images"
-            : "rescue-page-images no-images"
+            ? `rescue-page-images ${descriptionClicked}`
+            : `rescue-page-images no-images ${descriptionClicked}`
         }
       >
         {rescue.images != null || rescue.images != undefined ? (
@@ -121,6 +122,8 @@ function RescuePage(rescue) {
             weight={rescue.weight}
             color={rescue.color}
             description={rescue.description}
+            descriptionClicked={descriptionClicked}
+            setDescriptionClicked={setDescriptionClicked}
           />
         </div>
         {/* )} */}

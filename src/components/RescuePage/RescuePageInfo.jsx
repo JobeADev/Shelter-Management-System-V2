@@ -1,6 +1,17 @@
 import { ageInMonthsConverter, ageInYearsConverter } from "../ageConverters";
 
 const RescuePageInfo = (rescue) => {
+  const handleDescriptionClicked = () => {
+    if (rescue.description.length >= 225 && rescue.descriptionClicked === "") {
+      rescue.setDescriptionClicked("description-clicked");
+    } else if (
+      rescue.description.length >= 225 &&
+      rescue.descriptionClicked === "description-clicked"
+    ) {
+      rescue.setDescriptionClicked("");
+    }
+  };
+
   return (
     <section className="rescue-page-info-container">
       <div className="rescue-page-info">
@@ -24,15 +35,26 @@ const RescuePageInfo = (rescue) => {
           <p className="rescue-page-detail-data">{rescue.color}</p>
         </div>
       </div>
-      {rescue.description != undefined || rescue.description != null ? (
-        rescue.description.length < 225 ? (
-          <p className="rescue-page-detail-description">{rescue.description}</p>
-        ) : (
-          <p className="rescue-page-detail-description">
-            {rescue.description.slice(0, 222)}...
-          </p>
-        )
-      ) : null}
+      <div
+        className="rescue-page-detail-description-container"
+        onClick={handleDescriptionClicked}
+      >
+        {rescue.description != undefined || rescue.description != null ? (
+          rescue.description.length < 225 ? (
+            <p className="rescue-page-detail-description">
+              {rescue.description}
+            </p>
+          ) : rescue.descriptionClicked ? (
+            <p className="rescue-page-detail-description description-long">
+              {rescue.description}
+            </p>
+          ) : (
+            <p className="rescue-page-detail-description description-long">
+              {rescue.description.slice(0, 222)}...
+            </p>
+          )
+        ) : null}
+      </div>
     </section>
   );
 };

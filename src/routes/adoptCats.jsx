@@ -17,7 +17,6 @@ export const Route = createFileRoute("/adoptCats")({
 });
 
 function Cats() {
-  // const [isRescueClicked, setIsRescueClicked] = useState(false);
   const [clicked] = useContext(ClickedContext);
   const [, setSpeciesList] = useContext(SpeciesListContext);
   const { isLoading, data } = useQuery({
@@ -51,7 +50,6 @@ function Cats() {
             images={rescue.images}
             breed={rescue.breed}
             birthday={rescue.birthday}
-            // setIsRescueClicked={setIsRescueClicked}
           />
         ))}
       </div>

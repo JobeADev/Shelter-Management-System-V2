@@ -1,8 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { useLocation } from "@tanstack/react-router";
+import { ClickedContext } from "./contexts";
 
 export default function ScrollToTop() {
+  const [, setClicked] = useContext(ClickedContext);
   const location = useLocation();
+
+  const handleClicked = () => {
+    setClicked(false);
+  };
 
   useEffect(() => {
     // Scroll to top on route change
@@ -11,6 +17,7 @@ export default function ScrollToTop() {
       left: 0,
       behavior: "instant",
     });
+    handleClicked();
   }, [location]);
 
   return null;

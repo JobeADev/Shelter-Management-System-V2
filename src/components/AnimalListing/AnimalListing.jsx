@@ -10,7 +10,6 @@ const AnimalListing = (rescue) => {
         to="/rescueDetails/$postId"
         params={{ postId: rescue.petId }}
         className="rescue-details-image-link"
-        // onClick={() => rescue.setIsRescueClicked(true)}
       >
         <img
           src={
@@ -27,20 +26,26 @@ const AnimalListing = (rescue) => {
           <Link
             to={`/rescueDetails/${rescue.petId}`}
             className="rescue-details-name-link"
-            // onClick={() => rescue.setIsRescueClicked(true)}
           >
             {rescue.name}
           </Link>
         </div>
         <div className="rescue-details-info">
-          <p>{rescue.breed}</p>
           <p>
+            {/* <b className="rescue-details-info-category">Gender:</b> */}
+            {rescue.gender}
+          </p>
+          <p>
+            {/* <b className="rescue-details-info-category">Breed:</b> */}
+            {rescue.breed}
+          </p>
+          <p>
+            {/* <b className="rescue-details-info-category">Age:</b> */}
             {ageInYearsConverter(rescue.birthday)}Yrs.{" "}
             {ageInMonthsConverter(rescue.birthday)}Mo.
           </p>
         </div>
       </section>
-      {/* <section className="rescue-details-info"></section> */}
     </nav>
   );
 };

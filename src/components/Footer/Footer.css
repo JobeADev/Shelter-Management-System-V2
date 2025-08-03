@@ -20,6 +20,13 @@
   color: var(--hover);
 }
 
+.footer-logo:hover:active,
+.footer-link:hover:active,
+.social-link:hover:active {
+  transition: none;
+  color: var(--link-press);
+}
+
 .footer-container {
   padding: 5px 0px;
   background-color: var(--primary);

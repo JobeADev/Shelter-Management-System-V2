@@ -162,12 +162,22 @@
   color: var(--hover);
 }
 
+.nav-logo:hover:active {
+  transition: none;
+  color: var(--link-press);
+}
+
 .nav-option {
   transition: 0.5s ease-out;
 }
 
 .nav-option:hover {
   background-color: var(--hover);
+}
+
+.nav-option:hover:active {
+  transition: none;
+  background-color: var(--link-press);
 }
 
 /* .nav-home-paw-logo {
