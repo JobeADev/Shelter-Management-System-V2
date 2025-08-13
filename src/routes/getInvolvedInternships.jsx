@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { ClickedContext } from "../components/contexts";
 import { Link } from "@tanstack/react-router";
 import Title from "../components/Title";
 import "./getInvolved.css";
@@ -8,8 +10,12 @@ export const Route = createFileRoute("/getInvolvedInternships")({
 });
 
 function Internships() {
+  const [clicked] = useContext(ClickedContext);
+
   return (
-    <div className="adopt-container">
+    <div
+      className={clicked ? "adopt-container clicked-noShow" : "adopt-container"}
+    >
       <Title classOption="blank-banner" title="internship opportunities" />
       <section className="info-page-content filler-page">
         <p className="info-page-intro intern-page">

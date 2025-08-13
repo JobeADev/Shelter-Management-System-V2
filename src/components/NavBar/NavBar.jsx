@@ -14,27 +14,32 @@ export default function NavBar() {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [makeOpac, setMakeOpac] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleShowNavbar = () => {
-    if (clicked) {
-      setShowNavbar(true);
-    } else if (window.scrollY > lastScrollY) {
-      // Scrolling down
-      setShowNavbar(false);
-    } else {
-      // Scrolling up
-      setShowNavbar(true);
+    if (window.innerWidth >= 450) {
+      if (clicked) {
+        setShowNavbar(true);
+      } else if (window.scrollY > lastScrollY) {
+        // Scrolling down
+        setShowNavbar(false);
+      } else {
+        // Scrolling up
+        setShowNavbar(true);
+      }
+      setLastScrollY(window.scrollY);
     }
-    setLastScrollY(window.scrollY);
   };
 
   const handleNavOpacity = () => {
-    if (window.scrollY < 70) {
-      // Scrolling up or near the top
-      setMakeOpac(false);
-    } else if (window.scrollY >= 78) {
-      // Scrolling down and past a certain threshold
-      setMakeOpac(true);
+    if (window.innerWidth >= 450) {
+      if (window.scrollY < 78) {
+        // Scrolling up or near the top
+        setMakeOpac(false);
+      } else if (window.scrollY >= 78) {
+        // Scrolling down and past a certain threshold
+        setMakeOpac(true);
+      }
     }
   };
 
@@ -43,10 +48,22 @@ export default function NavBar() {
     handleNavOpacity();
   }
 
+  const handleScreenChange = () => {
+    const currentWidth = window.innerWidth;
+
+    if (currentWidth <= 450) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScreenChange);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScreenChange);
     };
   }, [lastScrollY]); // Re-run effect if lastScrollY changes
 
@@ -72,9 +89,21 @@ export default function NavBar() {
 
   return (
     <div
-      className={`nav-bar-container ${showNavbar ? "show" : "hide"} ${makeOpac && !clicked ? "width-change" : ""}`}
+      className={
+        !isMobile
+          ? `nav-bar-container ${showNavbar ? "show" : "hide"} ${makeOpac && !clicked ? "width-change" : ""}`
+          : "nav-bar-container"
+      }
     >
-      <nav className={makeOpac && !clicked ? "nav-bar make-opac" : "nav-bar"}>
+      <nav
+        className={
+          !isMobile
+            ? makeOpac && !clicked
+              ? "nav-bar make-opac"
+              : "nav-bar"
+            : "nav-bar"
+        }
+      >
         <div
           className="nav-logo"
           onClick={() => {
@@ -83,7 +112,7 @@ export default function NavBar() {
           }}
         >
           <Link to="/">
-            <i className="fa-solid fa-paw fa-3x" />
+            <i className="fa-solid fa-paw" />
           </Link>
           {/* <Link to="/">
             <div className="nav-home-paw-logo" />

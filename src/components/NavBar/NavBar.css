@@ -82,21 +82,19 @@
 }
 
 .menu-icon {
-  /* height: 100%; */
   display: none;
-  font-size: 42px;
   cursor: pointer;
   transition: 0.5s ease-out;
   /* align-content: center; */
 }
 
-.menu-icon:hover {
-  color: var(--hover);
+.menu-icon .fa-xmark,
+.menu-icon .fa-bars {
+  font-size: 2.8em;
 }
 
-.fa-xmark,
-.fa-bars {
-  padding-top: 14px;
+.menu-icon:hover {
+  color: var(--hover);
 }
 
 .menu-donate {
@@ -156,6 +154,10 @@
   height: 100%;
   padding-top: var(--nav-logo-spacing);
   transition: 0.5s ease-out;
+}
+
+.nav-logo .fa-paw {
+  font-size: 3em;
 }
 
 .nav-logo:hover {
@@ -237,7 +239,6 @@
 
   .menu-icon {
     display: block;
-    padding-bottom: 5px;
   }
 
   /* .menu-icon.clicked {
@@ -275,8 +276,30 @@
 
 @media screen and (max-width: 430px) {
   .nav-bar {
+    height: 63px;
     justify-content: space-between;
     padding: 0px 20px;
+  }
+
+  .nav-logo {
+    padding-top: 9px;
+  }
+
+  .nav-logo .fa-paw {
+    font-size: 2.4em;
+  }
+
+  .menu-icon {
+    padding-top: 3px;
+  }
+
+  .menu-icon .fa-xmark,
+  .menu-icon .fa-bars {
+    font-size: 2.1em;
+  }
+
+  .nav-bar-container {
+    position: relative;
   }
 
   .nav-bar-container.show.width-change,
@@ -284,8 +307,13 @@
     width: 14.2rem;
   }
 
+  .menu {
+    height: 60rem;
+    top: 62px;
+  }
+
   .menu.clicked {
-    padding-top: 30px;
+    padding-top: 20px;
   }
 
   .nav-link {

@@ -10,30 +10,30 @@ const RecentRescueCard = (rescue) => {
 
   return (
     <div className="rescue-card-container">
-      <div className="rescue-card">
-        <section className="rescue-info">
-          <Link to={`/rescueDetails/${rescue.petId}`} className="rescue-name">
-            {rescue.name}
-          </Link>
-          <div className="rescue-info-container">
-            <div>
-              <p className="rescue-detail">Gender: {rescue.gender}</p>
-              <p className="rescue-detail">
-                Species: {rescue.species}{" "}
-                {/* {props.species === "Dog" ? (
+      <section className="rescue-info">
+        <Link to={`/rescueDetails/${rescue.petId}`} className="rescue-name">
+          {rescue.name}
+        </Link>
+        <div className="rescue-info-container">
+          <div>
+            <p className="rescue-detail">Gender: {rescue.gender}</p>
+            <p className="rescue-detail">
+              Species: {rescue.species}{" "}
+              {/* {props.species === "Dog" ? (
                   <i className="fa-solid fa-dog"></i>
                 ) : null} */}
-              </p>
-            </div>
-            <div>
-              <p className="rescue-detail">Breed: {rescue.breed}</p>
-              <p className="rescue-detail">
-                Age: {ageInYearsConverter(rescue.birthday)}Yrs.{" "}
-                {ageInMonthsConverter(rescue.birthday)}Mo.
-              </p>
-            </div>
+            </p>
           </div>
-        </section>
+          <div>
+            <p className="rescue-detail">Breed: {rescue.breed}</p>
+            <p className="rescue-detail">
+              Age: {ageInYearsConverter(rescue.birthday)}Yrs.{" "}
+              {ageInMonthsConverter(rescue.birthday)}Mo.
+            </p>
+          </div>
+        </div>
+      </section>
+      <div className="rescue-card">
         <section className="rescue-images">
           <img
             className="hero"

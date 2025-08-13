@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { ClickedContext } from "../components/contexts";
 import { Link } from "@tanstack/react-router";
 import Title from "../components/Title";
 import { AboutInfoList } from "../components/data";
@@ -9,8 +11,12 @@ export const Route = createFileRoute("/about")({
 });
 
 function About() {
+  const [clicked] = useContext(ClickedContext);
+
   return (
-    <div className="adopt-container main">
+    <div
+      className={clicked ? "adopt-container clicked-noShow" : "adopt-container"}
+    >
       <Title classOption="blank-banner" title="about us" />
       <section className="info-page-content">
         {AboutInfoList.map((i, index) => (

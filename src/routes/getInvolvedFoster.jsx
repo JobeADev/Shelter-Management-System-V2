@@ -46,8 +46,8 @@ function Foster() {
           If you're ready to give fostering a try, please fill out the form
           below and we'll be in touch soon!
         </p>
-        <Form formTheme="Name of the Animal/s You Were Interested in Fostering  (If none, you may leave this blank)" />
       </section>
+      <Form formTheme="Name of the Animal/s You Were Interested in Fostering  (If none, you may leave this blank)" />
     </div>
   );
 }

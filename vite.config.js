@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+// const URL = process.env.VITE_REMOTE_API;
 
 export default defineConfig({
   server: {

@@ -65,3 +65,9 @@
 .intern-page-link:hover {
   color: var(--hover);
 }
+
+@media screen and (max-width: 430px) {
+  .species-links.get-involved-short {
+    padding-bottom: 12rem;
+  }
+}

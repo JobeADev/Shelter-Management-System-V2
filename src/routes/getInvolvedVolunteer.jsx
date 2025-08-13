@@ -50,11 +50,11 @@ function Volunteer() {
           If you're ready to get hands on and give volunteering a try, please
           fill out the form below!
         </p>
-        <Form
-          formTheme="Please list any special skills or experiences you have that may help  (If none in particular, please type N/A)"
-          isVolunteerPage={true}
-        />
       </section>
+      <Form
+        formTheme="Please list any special skills or experiences you have that may help  (If none in particular, please type N/A)"
+        isVolunteerPage={true}
+      />
     </div>
   );
 }

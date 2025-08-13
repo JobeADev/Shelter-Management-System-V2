@@ -1,6 +1,6 @@
-// import { useContext } from "react";
+import { useContext } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-// import { ClickedContext } from "../components/contexts";
+import { ClickedContext } from "../components/contexts";
 import Title from "../components/Title";
 import { PetCareList } from "../components/data";
 
@@ -9,13 +9,12 @@ export const Route = createFileRoute("/resourcesCare")({
 });
 
 function Care() {
-  // const [clicked] = useContext(ClickedContext);
+  const [clicked] = useContext(ClickedContext);
 
   return (
-    // <div
-    //   className={clicked ? "adopt-container clicked-noShow" : "adopt-container"}
-    // >
-    <div className="adopt-container main">
+    <div
+      className={clicked ? "adopt-container clicked-noShow" : "adopt-container"}
+    >
       <Title classOption="blank-banner" title="pet care" />
       <section className="info-page-content filler-page">
         <p className="info-page-intro care-page-intro-first">

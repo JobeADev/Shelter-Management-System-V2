@@ -6,7 +6,17 @@ const Title = (props) => {
           props.classOption ? `adopt-title ${props.classOption}` : "adopt-title"
         }
       >
-        <span className="adopt-title-text">{props.title.toUpperCase()}</span>
+        <span
+          className={
+            props.title.length < 18
+              ? "adopt-title-text"
+              : props.title.length < 23
+                ? "adopt-title-text title-long"
+                : "adopt-title-text title-xlong"
+          }
+        >
+          {props.title.toUpperCase()}
+        </span>
       </h1>
     </div>
   );

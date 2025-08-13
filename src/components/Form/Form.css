@@ -175,3 +175,20 @@
     height: 100%;
   }
 }
+
+@media screen and (max-width: 430px) {
+  .form-radio-title {
+    font-size: 14px;
+  }
+
+  .form-radio-label-text {
+    padding-left: 3px;
+    font-size: 13px;
+    opacity: 0.5;
+    /* color: var(--primary); */
+  }
+
+  .form-radio-selection {
+    width: 100%;
+  }
+}

@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { ClickedContext } from "../components/contexts";
 import { Link } from "@tanstack/react-router";
 import { ResourcesItems } from "../components/dropdownItems";
 import Title from "../components/Title";
@@ -9,10 +11,14 @@ export const Route = createFileRoute("/resources")({
 });
 
 function Resources() {
+  const [clicked] = useContext(ClickedContext);
+
   return (
-    <div className="adopt-container main">
+    <div
+      className={clicked ? "adopt-container clicked-noShow" : "adopt-container"}
+    >
       <Title classOption="resources-main" title="resources" />
-      <nav className="species-links">
+      <nav className="species-links short">
         {ResourcesItems.map((category, index) => (
           <Link to={category.path} className="species-link" key={index}>
             <div className={`category-image ${category.class}`}>

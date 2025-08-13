@@ -163,7 +163,7 @@ function Form(props) {
             />
           ) : null}
           <span className="form-radio-inputs">
-            <div>
+            <div className="form-radio-selection">
               <p className="form-radio-title">Are You Over 18?</p>
               <label className="form-radio-label" htmlFor="over18YesResponse">
                 <input
@@ -191,7 +191,7 @@ function Form(props) {
               </label>
             </div>
             {props.isVolunteerPage ? (
-              <div>
+              <div className="form-radio-selection">
                 <p className="form-radio-title">
                   Do You Plan To Bring Friends/Family
                 </p>

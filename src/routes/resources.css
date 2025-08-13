@@ -30,9 +30,9 @@
 } */
 
 .info-page-content.filler-page.surrender-page {
-  padding-top: 18px;
+  padding-top: 85px;
   justify-content: space-between;
-  height: 50rem;
+  height: 24rem;
 }
 
 .info-page-intro.care-page-intro-first {
@@ -63,4 +63,22 @@
 
 .info-page-item.care-page::marker {
   font-size: 11px;
+}
+
+@media screen and (max-width: 430px) {
+  .species-links.short {
+    padding-bottom: 22rem;
+  }
+
+  .info-page-content.filler-page.surrender-page {
+    padding-top: 0px;
+    justify-content: space-between;
+    height: 24rem;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .info-page-intro.care-page:last-of-type {
+    padding-top: 0;
+  }
 }
