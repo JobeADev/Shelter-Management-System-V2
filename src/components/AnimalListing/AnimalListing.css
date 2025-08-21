@@ -113,9 +113,27 @@
     margin-top: 10px;
     margin-bottom: 20px;
   }
+
+  .rescue-details-info {
+    color: var(--primary);
+    font-size: 15px;
+  }
+
+  .rescue-details-name-link {
+    font-size: 19px;
+    padding: 5px 3px 0px 3px;
+  }
+
+  .rescue-details-name-link:hover {
+    font-size: 23px;
+  }
 }
 
 @media screen and (max-width: 360px) {
+  .rescue-details-container {
+    max-width: 90px;
+  }
+
   .rescue-details-image {
     border: solid 2px var(--primary);
     max-height: 95px;
@@ -123,13 +141,23 @@
     border-radius: 30px;
   }
 
-  .rescue-details-container {
-    max-width: 90px;
-  }
-
   .rescue-details-info-container {
     height: 100px;
     margin-top: 10px;
     margin-bottom: 20px;
+  }
+
+  .rescue-details-info {
+    color: var(--primary);
+    font-size: 14px;
+  }
+
+  .rescue-details-name-link {
+    font-size: 18px;
+    padding: 5px 3px 0px 3px;
+  }
+
+  .rescue-details-name-link:hover {
+    font-size: 22px;
   }
 }

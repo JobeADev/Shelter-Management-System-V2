@@ -16,19 +16,34 @@ const RecentRescueCard = (rescue) => {
         </Link>
         <div className="rescue-info-container">
           <div>
-            <p className="rescue-detail">Gender: {rescue.gender}</p>
             <p className="rescue-detail">
-              Species: {rescue.species}{" "}
-              {/* {props.species === "Dog" ? (
-                  <i className="fa-solid fa-dog"></i>
-                ) : null} */}
+              {" "}
+              Gender:{" "}
+              <span className="rescue-detail-category-name">
+                {rescue.gender}
+              </span>
+            </p>
+            <p className="rescue-detail">
+              Species:{" "}
+              <span className="rescue-detail-category-name">
+                {rescue.species}
+              </span>{" "}
             </p>
           </div>
           <div>
-            <p className="rescue-detail">Breed: {rescue.breed}</p>
             <p className="rescue-detail">
-              Age: {ageInYearsConverter(rescue.birthday)}Yrs.{" "}
-              {ageInMonthsConverter(rescue.birthday)}Mo.
+              {" "}
+              Breed:{" "}
+              <span className="rescue-detail-category-name">
+                {rescue.breed}
+              </span>
+            </p>
+            <p className="rescue-detail">
+              Age:{" "}
+              <span className="rescue-detail-category-name">
+                {ageInYearsConverter(rescue.birthday)}Yrs.{" "}
+                {ageInMonthsConverter(rescue.birthday)}Mo.
+              </span>
             </p>
           </div>
         </div>

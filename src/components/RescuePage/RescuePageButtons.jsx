@@ -12,15 +12,7 @@ export default function RescuePageButtons(props) {
       </Link>
       {props.name != undefined ? (
         <Link>
-          <p
-            className={
-              props.name.length < 7
-                ? "rescue-page-btn-adopt"
-                : props.name.length > 6 && props.name.length < 10
-                  ? "rescue-page-btn-adopt name-long"
-                  : "rescue-page-btn-adopt name-xlong"
-            }
-          >{`ADOPT ${props.name.toUpperCase()}`}</p>
+          <p className="rescue-page-btn-adopt">{`ADOPT ${props.name.toUpperCase()}`}</p>
         </Link>
       ) : null}
     </section>

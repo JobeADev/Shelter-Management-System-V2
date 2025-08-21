@@ -11,8 +11,8 @@ export default function Footer() {
       className={clicked[0] ? "footer-container clicked" : "footer-container"}
     >
       <nav className="footer">
-        <div className="footer-logo">
-          <Link to="/" className="paw" onClick={() => setSpeciesList([])}>
+        <div className="footer-logo" onClick={() => setSpeciesList([])}>
+          <Link to="/" className="paw">
             <i className="fa-solid fa-paw fa-3x" />
           </Link>
           {/* <Link to="/">

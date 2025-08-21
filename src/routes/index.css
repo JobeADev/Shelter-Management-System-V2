@@ -420,6 +420,6 @@ body {
 
   .before-footer {
     background: linear-gradient(23deg, var(--hover) 50%, var(--secondary) 51%);
-    min-height: 42vh;
+    min-height: 45vh;
   }
 }
